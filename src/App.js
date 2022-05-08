@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 function App() {
@@ -52,7 +52,7 @@ function App() {
 
     return (
         <div>
-            <input value={value} onChange={(e) => setValue(e.target.value)}/>
+            <input type={text}/>
             <button value = 'кнопка' onClick={calc}>кнопка</button>
             <br/>
             <h3>{bulls} Быка</h3>
