@@ -5,32 +5,36 @@ import { useState, useEffect } from "react";
 function App() {
     // debugger
     const [value, setValue] = useState('');
-    let randomNumberSTR = 0;
+    const [randomNumberSTR, setRandomNumberSTR] = useState('');
+   
 
 
-    useEffect = () => {
-        randomNumber()
-    }
-
-    function randomNumber() {
-        // debugger
-        const arr = [0,1,2,3,4,5,6,7,8,9];
-        const newArr = [];
-        let temp = 9;
-        for (let i = 1; i < 5; i++) {
-            let random = Math.floor(Math.random() * temp);
-            //console.log(random);
-            newArr.push(arr[random])
-            //console.log(newArr);
-            arr.splice(random, 1);
-            temp -= 1;
-            //console.log(arr);
+    useEffect(() => {
+        function randomNumber() {
+            // debugger
+            const arr = [0,1,2,3,4,5,6,7,8,9];
+            const newArr = [];
+            let temp = 9;
+            for (let i = 1; i < 5; i++) {
+                let random = Math.floor(Math.random() * temp);
+                //console.log(random);
+                newArr.push(arr[random])
+                //console.log(newArr);
+                arr.splice(random, 1);
+                temp -= 1;
+                //console.log(arr);
+            }
+            setRandomNumberSTR(newArr.join(''));
         }
-        randomNumberSTR = newArr.join('');
-    }
+        randomNumber()
 
+    }, [])
+    
+    // useEffect(() => randomNumber(), [])
+    
     //const randomNumberSTR = randomNumber();
-    randomNumber();
+    // randomNumber();
+    
     console.log(randomNumberSTR);
     let userNumber = value;
     console.log(userNumber);
@@ -53,7 +57,7 @@ function App() {
                 setCows(cows += 1);
             }
         }
-    cows -= bulls;
+    setCows(cows - bulls);
     console.log(bulls);
     console.log(cows);
     
