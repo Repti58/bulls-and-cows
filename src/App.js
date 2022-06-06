@@ -3,10 +3,17 @@ import { useState, useEffect } from "react";
 
 
 function App() {
+    // debugger
     const [value, setValue] = useState('');
     let randomNumberSTR = 0;
 
+
+    useEffect = () => {
+        randomNumber()
+    }
+
     function randomNumber() {
+        // debugger
         const arr = [0,1,2,3,4,5,6,7,8,9];
         const newArr = [];
         let temp = 9;
@@ -21,6 +28,7 @@ function App() {
         }
         randomNumberSTR = newArr.join('');
     }
+
     //const randomNumberSTR = randomNumber();
     randomNumber();
     console.log(randomNumberSTR);
@@ -34,26 +42,33 @@ function App() {
     const userNumberSTR = userNumber.toString();
 
     function calc() {
-
+        // debugger;
+       
         for (let i = 0; i < randomNumberSTR.length; i++) {
 
             if (randomNumberSTR[i] === userNumberSTR[i]) {
-            setBulls(bulls += 1);
+                setBulls(bulls += 1);
             }
             if (randomNumberSTR.indexOf(userNumberSTR[i]) >= 0) {
-            setCows(cows += 1);
+                setCows(cows += 1);
             }
         }
     cows -= bulls;
     console.log(bulls);
     console.log(cows);
     
+
+}
+const reset = () => {
+        setBulls(0);
+        setCows(0);
     }
 
     return (
         <div>
-            <input type={text}/>
-            <button value = 'кнопка' onClick={calc}>кнопка</button>
+            <textarea onChange={(event) => setValue(event.target.value)}/>
+            <button onClick={calc}>кнопка</button>
+            <button onClick={reset}>сброс</button>
             <br/>
             <h3>{bulls} Быка</h3>
             <h3>{cows} Коровы</h3>
