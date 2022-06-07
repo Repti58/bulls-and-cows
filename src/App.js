@@ -3,24 +3,24 @@ import { useState, useEffect } from "react";
 
 
 function App() {
-    // debugger
+    debugger
     const [value, setValue] = useState('');
     const [randomNumberSTR, setRandomNumberSTR] = useState('');
     let [bulls, setBulls] = useState(0);
     let [cows, setCows] = useState(0);
-    const [step, setStep] = useState({});
-    const stepData = {
-        stepCount: 0,
-        userNumber: userNumber,
-        bulls: bulls,
-        cows: cows,
-    }
+    // const [steps, setSteps] = useState([]);
+    // const stepData = {
+    //     stepCount: 0,
+    //     userNumber: '',
+    //     bulls: '0',
+    //     cows: '0',
+    // }
     console.log(`bulls ${bulls}`);
     console.log(`cows ${cows}`);
 
     useEffect(() => {
         function randomNumber() {
-            // debugger
+            debugger
             const arr = [0,1,2,3,4,5,6,7,8,9];
             const newArr = [];
             let temp = 9;
@@ -47,7 +47,7 @@ function App() {
     console.log(`randomNumber ${randomNumberSTR}`);
     let userNumber = value.toString();
     console.log(`userNumber ${userNumber}`);
-   
+//    stepData.userNumber = userNumber
 
     
     
@@ -57,7 +57,7 @@ function App() {
         setCows(0);
     }
     function calc() {
-        // debugger;
+        debugger;
        let bullsCount = 0;
        let cowsCount = 0;
         for (let i = 0; i < randomNumberSTR.length; i++) {
@@ -70,11 +70,16 @@ function App() {
             }
         }
         cowsCount = cowsCount - bullsCount;
+        // stepData.bulls = bullsCount;
+        // stepData.cows = cowsCount;
+        // setSteps(steps => steps.concat(stepData));
         setBulls(bullsCount);
         setCows(cowsCount);
     
-    
-}
+
+        
+    }
+    // const result = steps.map(el => cows)
 
     
     
@@ -85,6 +90,7 @@ function App() {
             <button onClick={calc}>кнопка</button>
             <button onClick={reset}>сброс</button>
             <br/>
+            {/* <h3>{result}</h3> */}
             <h3>{bulls} Быка</h3>
             <h3>{cows} Коровы</h3>
 
