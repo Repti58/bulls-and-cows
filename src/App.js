@@ -6,8 +6,17 @@ function App() {
     // debugger
     const [value, setValue] = useState('');
     const [randomNumberSTR, setRandomNumberSTR] = useState('');
-   
-
+    let [bulls, setBulls] = useState(0);
+    let [cows, setCows] = useState(0);
+    const [step, setStep] = useState({});
+    const stepData = {
+        stepCount: 0,
+        userNumber: userNumber,
+        bulls: bulls,
+        cows: cows,
+    }
+    console.log(`bulls ${bulls}`);
+    console.log(`cows ${cows}`);
 
     useEffect(() => {
         function randomNumber() {
@@ -27,7 +36,7 @@ function App() {
             setRandomNumberSTR(newArr.join(''));
         }
         randomNumber()
-
+        
     }, [])
     
     // useEffect(() => randomNumber(), [])
@@ -35,38 +44,40 @@ function App() {
     //const randomNumberSTR = randomNumber();
     // randomNumber();
     
-    console.log(randomNumberSTR);
-    let userNumber = value;
-    console.log(userNumber);
-    let [bulls, setBulls] = useState(0);
-    let [cows, setCows] = useState(0);
+    console.log(`randomNumber ${randomNumberSTR}`);
+    let userNumber = value.toString();
+    console.log(`userNumber ${userNumber}`);
+   
 
     
     
-    const userNumberSTR = userNumber.toString();
-
-    function calc() {
-        // debugger;
-       
-        for (let i = 0; i < randomNumberSTR.length; i++) {
-
-            if (randomNumberSTR[i] === userNumberSTR[i]) {
-                setBulls(bulls += 1);
-            }
-            if (randomNumberSTR.indexOf(userNumberSTR[i]) >= 0) {
-                setCows(cows += 1);
-            }
-        }
-    setCows(cows - bulls);
-    console.log(bulls);
-    console.log(cows);
-    
-
-}
-const reset = () => {
+    // const userNumberSTR = userNumber.toString();
+    const reset = () => {
         setBulls(0);
         setCows(0);
     }
+    function calc() {
+        // debugger;
+       let bullsCount = 0;
+       let cowsCount = 0;
+        for (let i = 0; i < randomNumberSTR.length; i++) {
+
+            if (randomNumberSTR[i] === userNumber[i]) {
+                bullsCount += 1;
+            }
+            if (randomNumberSTR.indexOf(userNumber[i]) >= 0) {
+                cowsCount += 1;
+            }
+        }
+        cowsCount = cowsCount - bullsCount;
+        setBulls(bullsCount);
+        setCows(cowsCount);
+    
+    
+}
+
+    
+    
 
     return (
         <div>
