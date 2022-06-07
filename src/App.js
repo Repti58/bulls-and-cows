@@ -8,13 +8,13 @@ function App() {
     const [randomNumberSTR, setRandomNumberSTR] = useState('');
     let [bulls, setBulls] = useState(0);
     let [cows, setCows] = useState(0);
-    // const [steps, setSteps] = useState([]);
-    // const stepData = {
-    //     stepCount: 0,
-    //     userNumber: '',
-    //     bulls: '0',
-    //     cows: '0',
-    // }
+    const [steps, setSteps] = useState([]);
+    const stepData = {
+        stepCount: 0,
+        userNumber: '',
+        bulls: '0',
+        cows: '0',
+    }
     console.log(`bulls ${bulls}`);
     console.log(`cows ${cows}`);
 
@@ -47,7 +47,7 @@ function App() {
     console.log(`randomNumber ${randomNumberSTR}`);
     let userNumber = value.toString();
     console.log(`userNumber ${userNumber}`);
-//    stepData.userNumber = userNumber
+   stepData.userNumber = userNumber
 
     
     
@@ -70,16 +70,16 @@ function App() {
             }
         }
         cowsCount = cowsCount - bullsCount;
-        // stepData.bulls = bullsCount;
-        // stepData.cows = cowsCount;
-        // setSteps(steps => steps.concat(stepData));
-        setBulls(bullsCount);
-        setCows(cowsCount);
+        stepData.bulls = bullsCount;
+        stepData.cows = cowsCount;
+        setSteps(steps => steps.concat(stepData));
+        // setBulls(bullsCount);
+        // setCows(cowsCount);
     
 
         
     }
-    // const result = steps.map(el => cows)
+    const result = steps.map(el => (<div>{el.userNumber} - {el.bulls} быков {el.cows} коров</div>))
 
     
     
@@ -90,9 +90,9 @@ function App() {
             <button onClick={calc}>кнопка</button>
             <button onClick={reset}>сброс</button>
             <br/>
-            {/* <h3>{result}</h3> */}
-            <h3>{bulls} Быка</h3>
-            <h3>{cows} Коровы</h3>
+            <h3>{result}</h3>
+            {/* <h3>{bulls} Быка</h3>
+            <h3>{cows} Коровы</h3> */}
 
         </div>
     );
