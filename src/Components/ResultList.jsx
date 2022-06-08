@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const ResultList = (props) => {
 const bullsDeclination = (el) => {
     debugger
@@ -31,7 +30,10 @@ const cowsDeclination = (el) => {
 
     return (
         <h3>
-            {props.steps.map(el => (<div>Ход {el.stepCount} - {el.userNumber} - {el.bulls} {bullsDeclination(el)} {el.cows} {cowsDeclination(el)}</div>))}
+            {props.steps.map(el => {
+                debugger
+                return (<div>Ход {el.stepCount} - {el.userNumber} - {el.bulls} {bullsDeclination(el)} {el.cows} {cowsDeclination(el)}</div>)
+            })}
         </h3>
     )
 }

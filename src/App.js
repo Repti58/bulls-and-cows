@@ -4,37 +4,39 @@ import ResultList from "./Components/ResultList";
 
 function App() {
     debugger
-    const [value, setValue] = useState('');
-    const [randomNumberSTR, setRandomNumberSTR] = useState('');   
-    let [stepsCount, setStepsCount] = useState(0);
-    const [steps, setSteps] = useState([]);
     const stepData = {
         stepCount: 0,
         userNumber: '',
-        bulls: '0',
-        cows: '0',
-    }   
+        bulls: 0,
+        cows: 0,
+    }      
 
-    useEffect(() => {
-        function randomNumber() {
-            debugger
-            const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-            const newArr = [];
-            let temp = 9;
-            for (let i = 1; i < 5; i++) {
-                let random = Math.floor(Math.random() * temp);
-                //console.log(random);
-                newArr.push(arr[random])
-                //console.log(newArr);
-                arr.splice(random, 1);
-                temp -= 1;
-                //console.log(arr);
-            }
-            setRandomNumberSTR(newArr.join(''));
+    const [value, setValue] = useState('');
+    const [randomNumberSTR, setRandomNumberSTR] = useState('');   
+    const [stepsCount, setStepsCount] = useState(0);
+    
+    const [steps, setSteps] = useState([]);
+     
+    
+   
+
+    function randomNumber() {
+        debugger
+        const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        const newArr = [];
+        let temp = 9;
+        for (let i = 1; i < 5; i++) {
+            let random = Math.floor(Math.random() * temp);
+            //console.log(random);
+            newArr.push(arr[random])
+            //console.log(newArr);
+            arr.splice(random, 1);
+            temp -= 1;
+            //console.log(arr);
         }
-        randomNumber()
-
-    }, [])
+        setRandomNumberSTR(newArr.join(''));
+    }
+    useEffect(() => {randomNumber()}, [])
 
     console.log(`randomNumber ${randomNumberSTR}`);
     let userNumber = value.toString();
@@ -48,7 +50,6 @@ function App() {
         let cowsCount = 0;
 
         for (let i = 0; i < randomNumberSTR.length; i++) {
-
             if (randomNumberSTR[i] === userNumber[i]) {
                 bullsCount += 1;
             }
@@ -61,13 +62,16 @@ function App() {
         stepData.stepCount = stepsCount + 1;
         stepData.bulls = bullsCount;
         stepData.cows = cowsCount;
-        setSteps(steps => steps.concat(stepData));
+        setSteps(steps => [stepData, ...steps]);
+
     }
+    
    
     return (
         <div>
-            <textarea onChange={(event) => setValue(event.target.value)} />
-            <button onClick={calc}>кнопка</button>
+            <input onChange={(event) => setValue(event.target.value)} />
+            <button onClick={calc}>Сделать ход</button>
+            {/* <button onClick={reset}>Новая игра</button> */}
             <br />
             <div>
                 <ResultList steps={steps} />
