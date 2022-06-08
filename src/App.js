@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createRef } from "react";
 import { useState, useEffect } from "react";
 import ResultList from "./Components/ResultList";
 
@@ -10,15 +10,17 @@ function App() {
         bulls: 0,
         cows: 0,
     }      
+   
 
+    
     const [value, setValue] = useState('');
     const [randomNumberSTR, setRandomNumberSTR] = useState('');   
-    const [stepsCount, setStepsCount] = useState(0);
-    
+    const [stepsCount, setStepsCount] = useState(0);    
     const [steps, setSteps] = useState([]);
+     const input = React.createRef()
      
-    
-   
+     
+     
 
     function randomNumber() {
         debugger
@@ -36,7 +38,11 @@ function App() {
         }
         setRandomNumberSTR(newArr.join(''));
     }
-    useEffect(() => {randomNumber()}, [])
+    useEffect(() => {
+        randomNumber();
+        // input.current.focus();
+
+    }, [])
 
     console.log(`randomNumber ${randomNumberSTR}`);
     let userNumber = value.toString();
@@ -63,17 +69,17 @@ function App() {
         stepData.bulls = bullsCount;
         stepData.cows = cowsCount;
         setSteps(steps => [stepData, ...steps]);
-
+        setValue('');
     }
-    
-   
+
+
     return (
         <div>
-            <input onChange={(event) => setValue(event.target.value)} />
+            <input autoFocus ref={input} value={value} onChange={(event) => setValue(event.target.value)} />
             <button onClick={calc}>Сделать ход</button>
             {/* <button onClick={reset}>Новая игра</button> */}
             <br />
-            <div>
+            <div>  
                 <ResultList steps={steps} />
             </div>
         </div>
