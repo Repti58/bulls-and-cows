@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import ResultList from "./Components/ResultList";
 
 function App() {
     debugger
@@ -62,39 +63,15 @@ function App() {
         stepData.cows = cowsCount;
         setSteps(steps => steps.concat(stepData));
     }
-    const bullsDeclination = (el) => {
-        debugger
-        switch (el.bulls) {
-            case 0:
-                return 'Быков';
-            case 1:
-                return 'Бык';
-            case 2:
-            case 3:
-            case 4:
-                return 'Быка'
-        }
-    }
-    const cowsDeclination = (el) => {
-        debugger
-        switch (el.cows) {
-            case 0:
-                return 'Коров';
-            case 1:
-                return 'Корова';
-            case 2:
-            case 3:
-            case 4:
-                return 'Коровы'
-        }
-    }
-    const result = steps.map(el => (<div>{el.stepCount} - {el.userNumber} - {el.bulls} {bullsDeclination(el)} {el.cows} {cowsDeclination(el)}</div>))
+   
     return (
         <div>
             <textarea onChange={(event) => setValue(event.target.value)} />
             <button onClick={calc}>кнопка</button>
             <br />
-            <h3>{result}</h3>
+            <div>
+                <ResultList steps={steps} />
+            </div>
         </div>
     );
 
