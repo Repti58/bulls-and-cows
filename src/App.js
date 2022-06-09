@@ -2,6 +2,7 @@ import React, { createRef } from "react";
 import { useState, useEffect } from "react";
 import ResultList from "./Components/ResultList";
 
+
 function App() {
     debugger
     const stepData = {
@@ -9,18 +10,14 @@ function App() {
         userNumber: '',
         bulls: 0,
         cows: 0,
-    }      
-   
+        randomNumber: ''
+    }
 
-    
     const [value, setValue] = useState('');
-    const [randomNumberSTR, setRandomNumberSTR] = useState('');   
-    const [stepsCount, setStepsCount] = useState(0);    
+    const [randomNumberSTR, setRandomNumberSTR] = useState('');
+    const [stepsCount, setStepsCount] = useState(0);
     const [steps, setSteps] = useState([]);
-     const input = React.createRef()
-     
-     
-     
+    // const input = React.createRef()
 
     function randomNumber() {
         debugger
@@ -41,7 +38,6 @@ function App() {
     useEffect(() => {
         randomNumber();
         // input.current.focus();
-
     }, [])
 
     console.log(`randomNumber ${randomNumberSTR}`);
@@ -50,8 +46,7 @@ function App() {
     stepData.userNumber = userNumber
 
     const calc = () => {
-        debugger;
-        // let stepCount = 0;
+        debugger;       
         let bullsCount = 0;
         let cowsCount = 0;
 
@@ -68,18 +63,23 @@ function App() {
         stepData.stepCount = stepsCount + 1;
         stepData.bulls = bullsCount;
         stepData.cows = cowsCount;
-        setSteps(steps => [stepData, ...steps]);
+        stepData.randomNumber = randomNumberSTR;
+        setSteps(steps => [stepData, ...steps]);        
         setValue('');
     }
-
-
+    
+    const newMean = () => {
+        setSteps([]);
+        setStepsCount(0);
+        randomNumber();
+    }
     return (
         <div>
-            <input autoFocus ref={input} value={value} onChange={(event) => setValue(event.target.value)} />
+            <input autoFocus value={value} onChange={(event) => setValue(event.target.value)} />
             <button onClick={calc}>Сделать ход</button>
-            {/* <button onClick={reset}>Новая игра</button> */}
+            <button onClick={newMean}>Новая игра</button>
             <br />
-            <div>  
+            <div>
                 <ResultList steps={steps} />
             </div>
         </div>

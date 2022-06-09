@@ -32,8 +32,9 @@ const cowsDeclination = (el) => {
         <h3>
             {props.steps.map(el => {
                 debugger
-                return (<div>Ход {el.stepCount} - {el.userNumber} - {el.bulls} {bullsDeclination(el)} {el.cows} {cowsDeclination(el)}</div>)
+                return (<div>Ход {el.stepCount} - {el.userNumber} - {el.bulls} {bullsDeclination(el)} {el.cows} {cowsDeclination(el)} | Загаданное число - {el.randomNumber} </div>)
             })}
+            {/* {props.steps} */}
         </h3>
     )
 }
