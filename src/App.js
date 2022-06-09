@@ -17,8 +17,13 @@ function App() {
     const [randomNumberSTR, setRandomNumberSTR] = useState('');
     const [stepsCount, setStepsCount] = useState(0);
     const [steps, setSteps] = useState([]);
-    const [typeError, setTypeError] = useState('')
+    const [info, setInfo] = useState('')
+    // const [buttonReset, setButtonReset] = useState();
+    const [disableBtnReset, setDisableBtnReset] = useState(true);
+    const [disableBtnShot, setDisableBtnShot] = useState(false);
+    // const btnReset = <button ref={newGameBtn} disabled={disableBtnReset} onClick={reset}>Новая игра</button>
     const input = React.createRef()
+    const newGameBtn = React.createRef();
 
     function randomNumber() {
         debugger
@@ -49,15 +54,15 @@ function App() {
     const check = () => {
         debugger
         if (new Set(userNumber).size !== userNumber.length) {
-            setTypeError('Error')
+            setInfo('Цифры не должны повторяться')
         } else {
-            setTypeError('');
+            setInfo('');
             calc()
         }
     }
-        
-        const calc = () => {
-        debugger;       
+
+    const calc = () => {
+        debugger;
         let bullsCount = 0;
         let cowsCount = 0;
 
@@ -69,48 +74,58 @@ function App() {
                 cowsCount += 1;
             }
         }
+
+        if (bullsCount === 4) {
+            setInfo('Congratulations!!! You are win :)')
+            input.current.readOnly = true
+            setDisableBtnReset(false);            
+            setDisableBtnShot(true);
+
+        }
+
         cowsCount = cowsCount - bullsCount;
         setStepsCount(stepsCount + 1)
         stepData.stepCount = stepsCount + 1;
         stepData.bulls = bullsCount;
         stepData.cows = cowsCount;
         stepData.randomNumber = randomNumberSTR;
-        setSteps(steps => [stepData, ...steps]);        
+        setSteps(steps => [stepData, ...steps]);
         setValue('');
         input.current.focus();
     }
-    
+
     const reset = () => {
         setSteps([]);
         setStepsCount(0);
-        setTypeError('');
+        setInfo('');
         setValue('');
         randomNumber();
         input.current.focus();
+        input.current.readOnly = false
+        
+        
     }
-
-
     const test = () => {
-        setTypeError('Test')
+        // setInfo('Test')
+        setDisableBtnReset(true)
     }
-
-   
     return (
         <div>
-            <div className="infoBar">
+            <div className="">
                 <h1>Игра "Быки и коровы"</h1>
                 <p>Мы загадали 4-значное число</p>
             </div>
             <input ref={input} autoFocus maxLength={4} value={value} onChange={(event) => setValue(event.target.value)} />
-            <button onClick={check}>Сделать ход</button>
-            <button onClick={reset}>Новая игра</button>
-            <button onClick={test}>Тест</button>
+            <button disabled={disableBtnShot} onClick={check}>Сделать ход</button>
+            
+            <button ref={newGameBtn} disabled={disableBtnReset} onClick={reset}>Новая игра</button>
+            {/* <button  onClick={test}>Тест</button> */}
             <br />
             <div>
-                <InfoBar typeError={typeError}  />
+                <InfoBar info={info} />
             </div>
             <div>
-                <ResultList typeError={typeError} steps={steps} />
+                <ResultList steps={steps} />
             </div>
         </div>
     );

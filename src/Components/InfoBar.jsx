@@ -3,12 +3,10 @@ import '../App.css';
 
 const InfoBar = (props) => {
 
-
-
     return (
         <h5>                  
                 <div className="infoBar">
-                    {props.typeError}
+                    {props.info}
                 </div>            
         </h5>
     )
