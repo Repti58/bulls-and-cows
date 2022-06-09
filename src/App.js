@@ -1,7 +1,7 @@
 import React, { createRef } from "react";
 import { useState, useEffect } from "react";
 import ResultList from "./Components/ResultList";
-
+import InfoBar from "./Components/InfoBar";
 
 function App() {
     debugger
@@ -17,6 +17,7 @@ function App() {
     const [randomNumberSTR, setRandomNumberSTR] = useState('');
     const [stepsCount, setStepsCount] = useState(0);
     const [steps, setSteps] = useState([]);
+    const [typeError, setTypeError] = useState('')
     // const input = React.createRef()
 
     function randomNumber() {
@@ -45,7 +46,17 @@ function App() {
     console.log(`userNumber ${userNumber}`);
     stepData.userNumber = userNumber
 
-    const calc = () => {
+    const check = () => {
+        debugger
+        if (new Set(userNumber).size !== userNumber.length) {
+            setTypeError('Error')
+        } else {
+            setTypeError('');
+            calc()
+        }
+    }
+        
+        const calc = () => {
         debugger;       
         let bullsCount = 0;
         let cowsCount = 0;
@@ -68,19 +79,24 @@ function App() {
         setValue('');
     }
     
-    const newMean = () => {
+    const reset = () => {
         setSteps([]);
         setStepsCount(0);
+        setTypeError('');
+        setValue('');
         randomNumber();
     }
     return (
         <div>
-            <input autoFocus value={value} onChange={(event) => setValue(event.target.value)} />
-            <button onClick={calc}>Сделать ход</button>
-            <button onClick={newMean}>Новая игра</button>
+            <input autoFocus maxLength={4} value={value} onChange={(event) => setValue(event.target.value)} />
+            <button onClick={check}>Сделать ход</button>
+            <button onClick={reset}>Новая игра</button>
             <br />
             <div>
-                <ResultList steps={steps} />
+                <InfoBar typeError={typeError}  />
+            </div>
+            <div>
+                <ResultList typeError={typeError} steps={steps} />
             </div>
         </div>
     );
