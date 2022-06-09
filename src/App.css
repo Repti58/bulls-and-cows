@@ -1,4 +1,10 @@
 .infoBar {
-    color: crimson;
-    
+    opacity: 0;
+    /* color: crimson; */
+    animation: ani 2.5s forwards;
+}
+
+@keyframes ani {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }

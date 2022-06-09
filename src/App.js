@@ -18,7 +18,7 @@ function App() {
     const [stepsCount, setStepsCount] = useState(0);
     const [steps, setSteps] = useState([]);
     const [typeError, setTypeError] = useState('')
-    // const input = React.createRef()
+    const input = React.createRef()
 
     function randomNumber() {
         debugger
@@ -77,6 +77,7 @@ function App() {
         stepData.randomNumber = randomNumberSTR;
         setSteps(steps => [stepData, ...steps]);        
         setValue('');
+        input.current.focus();
     }
     
     const reset = () => {
@@ -85,12 +86,25 @@ function App() {
         setTypeError('');
         setValue('');
         randomNumber();
+        input.current.focus();
     }
+
+
+    const test = () => {
+        setTypeError('Test')
+    }
+
+   
     return (
         <div>
-            <input autoFocus maxLength={4} value={value} onChange={(event) => setValue(event.target.value)} />
+            <div className="infoBar">
+                <h1>Игра "Быки и коровы"</h1>
+                <p>Мы загадали 4-значное число</p>
+            </div>
+            <input ref={input} autoFocus maxLength={4} value={value} onChange={(event) => setValue(event.target.value)} />
             <button onClick={check}>Сделать ход</button>
             <button onClick={reset}>Новая игра</button>
+            <button onClick={test}>Тест</button>
             <br />
             <div>
                 <InfoBar typeError={typeError}  />
