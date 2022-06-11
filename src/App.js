@@ -102,6 +102,8 @@ function App() {
         randomNumber();
         input.current.focus();
         input.current.readOnly = false
+        setDisableBtnShot(false);
+        setDisableBtnReset(true);
         
         
     }
