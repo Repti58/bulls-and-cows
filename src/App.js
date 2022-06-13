@@ -42,22 +42,25 @@ function App() {
         setRandomNumberSTR(newArr.join(''));
     }
     useEffect(() => {
-        randomNumber();
-        // input.current.focus();
+        randomNumber();        
     }, [])
 
     console.log(`randomNumber ${randomNumberSTR}`);
-    let userNumber = value.toString();
+    let userNumber = value;
     console.log(`userNumber ${userNumber}`);
     stepData.userNumber = userNumber
 
     const check = () => {
         debugger
-        if (new Set(userNumber).size !== userNumber.length) {
-            setInfo('Цифры не должны повторяться')
+        if ((parseInt(userNumber).toString()).length === 4) { //4-digit number check
+            if (new Set(userNumber).size !== userNumber.length) { //repeated digits check
+                setInfo('Цифры не должны повторяться')
+            } else {
+                setInfo('');
+                calc()
+            }
         } else {
-            setInfo('');
-            calc()
+            setInfo('Введите 4-значное число')
         }
     }
 
