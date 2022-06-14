@@ -4,7 +4,7 @@ import ResultList from "./Components/ResultList";
 import InfoBar from "./Components/InfoBar";
 
 function App() {
-    debugger
+   
     const stepData = {
         stepCount: 0,
         userNumber: '',
@@ -17,27 +17,22 @@ function App() {
     const [randomNumberSTR, setRandomNumberSTR] = useState('');
     const [stepsCount, setStepsCount] = useState(0);
     const [steps, setSteps] = useState([]);
-    const [info, setInfo] = useState('')
-    // const [buttonReset, setButtonReset] = useState();
+    const [info, setInfo] = useState('')   
     const [disableBtnReset, setDisableBtnReset] = useState(true);
-    const [disableBtnShot, setDisableBtnShot] = useState(false);
-    // const btnReset = <button ref={newGameBtn} disabled={disableBtnReset} onClick={reset}>Новая игра</button>
+    const [disableBtnShot, setDisableBtnShot] = useState(false);   
     const input = React.createRef()
     const newGameBtn = React.createRef();
 
     function randomNumber() {
-        debugger
+       
         const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
         const newArr = [];
         let temp = 9;
         for (let i = 1; i < 5; i++) {
-            let random = Math.floor(Math.random() * temp);
-            //console.log(random);
-            newArr.push(arr[random])
-            //console.log(newArr);
+            let random = Math.floor(Math.random() * temp);           
+            newArr.push(arr[random])            
             arr.splice(random, 1);
-            temp -= 1;
-            //console.log(arr);
+            temp -= 1;           
         }
         setRandomNumberSTR(newArr.join(''));
     }
@@ -51,7 +46,7 @@ function App() {
     stepData.userNumber = userNumber
 
     const check = () => {
-        debugger
+       
         if ((parseInt(userNumber).toString()).length === 4) { //4-digit number check
             if (new Set(userNumber).size !== userNumber.length) { //repeated digits check
                 setInfo('Цифры не должны повторяться')
@@ -65,7 +60,7 @@ function App() {
     }
 
     const calc = () => {
-        debugger;
+       
         let bullsCount = 0;
         let cowsCount = 0;
 
@@ -106,26 +101,29 @@ function App() {
         input.current.focus();
         input.current.readOnly = false
         setDisableBtnShot(false);
-        setDisableBtnReset(true);
-        
-        
+        setDisableBtnReset(true);        
     }
-    const test = () => {
-        // setInfo('Test')
-        setDisableBtnReset(true)
-    }
+   
     return (
-        <div>
-            <div className="">
-                <h1>Игра "Быки и коровы"</h1>
-                <p>Мы загадали 4-значное число</p>
+        <div className="container">
+            <div className="title">
+                <h1>Логическая игра <br/> "Быки и коровы"</h1>               
+                <div>
+                <h4>Правила игры</h4>
+Компьютер задумывает четыре различные цифры из 0,1,2,...9. Игрок делает ходы, чтобы узнать эти цифры и их порядок.
+Каждый ход состоит из четырёх цифр, 0 может стоять на первом месте.
+В ответ компьютер показывает число отгаданных цифр, стоящих на своих местах (число быков) и число отгаданных цифр, стоящих не на своих местах (число коров).
+<h4>Пример</h4>
+Компьютер задумал 0834.
+Игрок сделал ход 8134.
+Компьютер ответил: 2 быка (цифры 3 и 4) и 1 корова (цифра 8).
+                </div>
             </div>
-            <input ref={input} autoFocus maxLength={4} value={value} onChange={(event) => setValue(event.target.value)} />
-            <button disabled={disableBtnShot} onClick={check}>Сделать ход</button>
-            
-            <button ref={newGameBtn} disabled={disableBtnReset} onClick={reset}>Новая игра</button>
-            {/* <button  onClick={test}>Тест</button> */}
-            <br />
+            <div className="form">
+                <input className="input" ref={input} autoFocus maxLength={4} value={value} onChange={(event) => setValue(event.target.value)} />
+                <button disabled={disableBtnShot} onClick={check}>Сделать ход</button>
+                <button ref={newGameBtn} disabled={disableBtnReset} onClick={reset}>Новая игра</button>
+            </div>            
             <div>
                 <InfoBar info={info} />
             </div>

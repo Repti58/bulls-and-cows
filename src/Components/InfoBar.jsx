@@ -4,11 +4,11 @@ import '../App.css';
 const InfoBar = (props) => {
 
     return (
-        <h5>                  
-                <div className="infoBar">
-                    {props.info}
-                </div>            
+        <div className='infobar'>
+        <h5>
+                {props.info}
         </h5>
+            </div>
     )
 }
 
