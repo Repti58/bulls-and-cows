@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import ResultList from "./Components/ResultList";
 import InfoBar from "./Components/InfoBar";
 import Rules from "./Components/Rules";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
    
@@ -21,7 +22,7 @@ function App() {
     const [info, setInfo] = useState('')   
     const [disableBtnReset, setDisableBtnReset] = useState(true);
     const [disableBtnShot, setDisableBtnShot] = useState(false);  
-    const [rules, setRules] = useState()
+    // const [rules, setRules] = useState()
     const input = React.createRef()
     const newGameBtn = React.createRef();
 
@@ -107,9 +108,9 @@ function App() {
         setDisableBtnReset(true);        
     }
 
-    const gameRules = () => {
-        setRules('Компьютер задумывает четыре различные цифры из 0,1,2,...9. Игрок делает ходы, чтобы узнать эти цифры и их порядок.')
-    }
+    // const gameRules = () => {
+    //     setRules('Компьютер задумывает четыре различные цифры из 0,1,2,...9. Игрок делает ходы, чтобы узнать эти цифры и их порядок.')
+    // }
 
 {/* <h4>Правила игры</h4>
 Компьютер задумывает четыре различные цифры из 0,1,2,...9. Игрок делает ходы, чтобы узнать эти цифры и их порядок.
@@ -129,8 +130,10 @@ function App() {
                 </div>
                 <div>
                     <button className="button" onClick={rules}>правила игры</button>
-                    
-                    <Rules rules={gameRules}/>
+                    <Routes>
+                    <Route path="Rules" element={<Rules />} />
+                </Routes>
+                   
                     <h3>Компьютер загадал 4 цифры, попробуйте их отгадать</h3>
                 </div>
             </div>
