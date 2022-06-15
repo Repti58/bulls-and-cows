@@ -5,10 +5,10 @@ const InfoBar = (props) => {
 
     return (
         <div className='infobar'>
-        <h5>
+            <h5>
                 {props.info}
-        </h5>
-            </div>
+            </h5>
+        </div>
     )
 }
 

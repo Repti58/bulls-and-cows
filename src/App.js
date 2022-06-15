@@ -2,6 +2,7 @@ import React, { createRef } from "react";
 import { useState, useEffect } from "react";
 import ResultList from "./Components/ResultList";
 import InfoBar from "./Components/InfoBar";
+import Rules from "./Components/Rules";
 
 function App() {
    
@@ -19,7 +20,8 @@ function App() {
     const [steps, setSteps] = useState([]);
     const [info, setInfo] = useState('')   
     const [disableBtnReset, setDisableBtnReset] = useState(true);
-    const [disableBtnShot, setDisableBtnShot] = useState(false);   
+    const [disableBtnShot, setDisableBtnShot] = useState(false);  
+    const [rules, setRules] = useState()
     const input = React.createRef()
     const newGameBtn = React.createRef();
 
@@ -46,8 +48,9 @@ function App() {
     stepData.userNumber = userNumber
 
     const check = () => {
-       
-        if ((parseInt(userNumber).toString()).length === 4) { //4-digit number check
+       debugger
+       console.log(parseInt(userNumber))
+        if (isNaN(userNumber) === false && userNumber.length === 4) { //4-digit number check
             if (new Set(userNumber).size !== userNumber.length) { //repeated digits check
                 setInfo('Цифры не должны повторяться')
             } else {
@@ -74,7 +77,7 @@ function App() {
         }
 
         if (bullsCount === 4) {
-            setInfo('Congratulations!!! You are win :)')
+            setInfo(`Вы отгадали число c ${(steps[0].stepCount) + 1}-й попытки :)`)
             input.current.readOnly = true
             setDisableBtnReset(false);            
             setDisableBtnShot(true);
@@ -103,27 +106,39 @@ function App() {
         setDisableBtnShot(false);
         setDisableBtnReset(true);        
     }
-   
-    return (
-        <div className="container">
-            <div className="title">
-                <h1>Логическая игра <br/> "Быки и коровы"</h1>               
-                <div>
-                <h4>Правила игры</h4>
+
+    const gameRules = () => {
+        setRules('Компьютер задумывает четыре различные цифры из 0,1,2,...9. Игрок делает ходы, чтобы узнать эти цифры и их порядок.')
+    }
+
+{/* <h4>Правила игры</h4>
 Компьютер задумывает четыре различные цифры из 0,1,2,...9. Игрок делает ходы, чтобы узнать эти цифры и их порядок.
 Каждый ход состоит из четырёх цифр, 0 может стоять на первом месте.
 В ответ компьютер показывает число отгаданных цифр, стоящих на своих местах (число быков) и число отгаданных цифр, стоящих не на своих местах (число коров).
 <h4>Пример</h4>
 Компьютер задумал 0834.
 Игрок сделал ход 8134.
-Компьютер ответил: 2 быка (цифры 3 и 4) и 1 корова (цифра 8).
+Компьютер ответил: 2 быка (цифры 3 и 4) и 1 корова (цифра 8). */}
+
+    return (
+        <div className="container">
+            <div className="title">
+                <div>
+                    <h2>БЫКИ И КОРОВЫ</h2>
+                    <h4>логическая игра</h4>
+                </div>
+                <div>
+                    <button className="button" onClick={rules}>правила игры</button>
+                    
+                    <Rules rules={gameRules}/>
+                    <h3>Компьютер загадал 4 цифры, попробуйте их отгадать</h3>
                 </div>
             </div>
             <div className="form">
                 <input className="input" ref={input} autoFocus maxLength={4} value={value} onChange={(event) => setValue(event.target.value)} />
-                <button disabled={disableBtnShot} onClick={check}>Сделать ход</button>
-                <button ref={newGameBtn} disabled={disableBtnReset} onClick={reset}>Новая игра</button>
-            </div>            
+                <button className="button" disabled={disableBtnShot} onClick={check}>Сделать ход</button>
+                <button className="button" ref={newGameBtn} disabled={disableBtnReset} onClick={reset}>Новая игра</button>
+            </div>
             <div>
                 <InfoBar info={info} />
             </div>
