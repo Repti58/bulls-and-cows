@@ -121,7 +121,7 @@ function Main() {
                         <h4>логическая игра</h4>
                     </div>
                     {/* <button className="button" onClick={rules}>правила игры</button> */}
-                    <Link to='/rules'><button className="button" >Правила игры</button></Link>
+                    <Link to='/rules'><button className="infoButton" >Правила игры</button></Link>
                     {/* <Routes>
                         <Route path="/rules" element={<Rules />} />
                     </Routes> */}
@@ -131,14 +131,15 @@ function Main() {
             </div>
             <div className="form">
                 <input className="input" ref={input} autoFocus maxLength={4} value={value} onChange={(event) => setValue(event.target.value)} />
-                
-                <button className="button" disabled={disableBtnShot} onClick={check}>Сделать ход</button>
-                <button className="button" ref={newGameBtn} disabled={disableBtnReset} onClick={reset}>Новая игра</button>
-            </div>
             <div>
                 <InfoBar info={info} />
             </div>
-            <div>
+                <div className="divButton">
+                <button className="button" disabled={disableBtnShot} onClick={check}>Сделать ход</button>
+                <button className="button" ref={newGameBtn} disabled={disableBtnReset} onClick={reset}>Новая игра</button>
+                </div>
+            </div>
+            <div className="resultBox">
                 <ResultList steps={steps} />
             </div>
         </div>
