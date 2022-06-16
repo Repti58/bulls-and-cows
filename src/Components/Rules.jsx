@@ -11,7 +11,7 @@ const Rules = (props) => {
                 {props.rulesText}
                 <h4>Пример</h4>
                 {props.rulesExample}
-            <div>
+            <div className="backLink">
                 <Link to='/main'><button className="button">Назад к игре</button></Link>
             </div>
             </div>

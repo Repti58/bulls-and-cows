@@ -113,7 +113,7 @@ function Main() {
             <div>
                 
                     <div className="title">
-                        <h2>БЫКИ И КОРОВЫ</h2>
+                        БЫКИ И КОРОВЫ
                     </div>
                 
                 <div className="underTitle">
