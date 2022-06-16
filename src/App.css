@@ -16,9 +16,9 @@
 .container {
     /* border: solid 1px red; */
     margin: 0 auto;
-    /* min-width: 500px; */
+    min-width: 450px;
     /* background-color: rgb(131, 131, 131); */
-    width: 450px;
+    /* width: 450px; */
 
 }
 
@@ -55,7 +55,7 @@
 .infobar {
     /* border: solid 1px rgb(0, 255, 55); */
     /* margin: 0 auto; */
-    width: 280px;
+    /* width: 280px; */
     text-align: left;
     padding: 5px 5px 5px 15px;
     height: 20px;
