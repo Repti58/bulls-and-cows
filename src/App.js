@@ -125,7 +125,7 @@ const App = () => {
                 <Routes>
                     <Route path="/rules" element={<Rules rulesText={rulesText} rulesExample={rulesExample} />} />
                     <Route path="/main" element={<Main input={input} logo={logo} value={value} setValue={setValue} info={info} disableBtnShot={disableBtnShot} check={check} disableBtnReset={disableBtnReset} reset={reset} steps={steps}/>} />
-                    <Route path="/*" element={<Main logo={logo} />} />
+                    <Route path="/*" element={<Main input={input} logo={logo} value={value} setValue={setValue} info={info} disableBtnShot={disableBtnShot} check={check} disableBtnReset={disableBtnReset} reset={reset} steps={steps}/>} />
                 </Routes>
             </div>
         </div>
