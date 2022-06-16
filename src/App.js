@@ -9,12 +9,22 @@ const rulesExample = 'Компьютер задумал 0834. Игрок сде�
 
 const App = () => {
     return (
-        <div>            
-            <Routes>
-                <Route path="/rules" element={<Rules rulesText={rulesText} rulesExample={rulesExample}/>} />
-                <Route path="/main" element={<Main logo={logo}/>} />
-                <Route path="/*" element={<Main logo={logo}/>} />                
-            </Routes>
+        <div className="container">
+            <div  >
+                <p className="title">
+                    БЫКИ И КОРОВЫ
+                </p>
+                <p className="title2">
+                    логическая игра
+                </p>
+            </div>
+            <div>
+                <Routes>
+                    <Route path="/rules" element={<Rules rulesText={rulesText} rulesExample={rulesExample} />} />
+                    <Route path="/main" element={<Main logo={logo} />} />
+                    <Route path="/*" element={<Main logo={logo} />} />
+                </Routes>
+            </div>
         </div>
     )
 }
