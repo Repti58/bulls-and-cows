@@ -77,8 +77,8 @@
 .result {
     /* border: solid 1px rgb(208, 255, 0); */
     margin: 0 auto;
-    padding: 10px 0px 10px 45px;
-    /* width: 310px; */
+    padding: 10px 0px 10px 0px;
+    width: 310px;
     text-align: left;    
     color: rgb(44, 44, 44);
     font-size: 18pt;    
