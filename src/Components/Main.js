@@ -2,8 +2,7 @@ import React, { createRef } from "react";
 import { useState, useEffect } from "react";
 import ResultList from "./ResultList";
 import InfoBar from "./InfoBar";
-import Rules from "./Rules";
-import { Route, Routes, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Main() {
    
@@ -21,13 +20,12 @@ function Main() {
     const [steps, setSteps] = useState([]);
     const [info, setInfo] = useState('')   
     const [disableBtnReset, setDisableBtnReset] = useState(true);
-    const [disableBtnShot, setDisableBtnShot] = useState(false);  
-    // const [rules, setRules] = useState()
+    const [disableBtnShot, setDisableBtnShot] = useState(false);     
     const input = React.createRef()
     const newGameBtn = React.createRef();
 
-    function randomNumber() {
-       
+
+    function randomNumber() {       
         const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
         const newArr = [];
         let temp = 9;
@@ -39,9 +37,13 @@ function Main() {
         }
         setRandomNumberSTR(newArr.join(''));
     }
+
+
     useEffect(() => {
         randomNumber();        
     }, [])
+
+
 
     console.log(`randomNumber ${randomNumberSTR}`);
     let userNumber = value;
@@ -63,8 +65,7 @@ function Main() {
         }
     }
 
-    const calc = () => {
-       
+    const calc = () => {       
         let bullsCount = 0;
         let cowsCount = 0;
 
@@ -82,7 +83,6 @@ function Main() {
             input.current.readOnly = true
             setDisableBtnReset(false);            
             setDisableBtnShot(true);
-
         }
 
         cowsCount = cowsCount - bullsCount;
@@ -106,20 +106,7 @@ function Main() {
         input.current.readOnly = false
         setDisableBtnShot(false);
         setDisableBtnReset(true);        
-    }
-
-    // const gameRules = () => {
-    //     setRules('Компьютер задумывает четыре различные цифры из 0,1,2,...9. Игрок делает ходы, чтобы узнать эти цифры и их порядок.')
-    // }
-
-{/* <h4>Правила игры</h4>
-Компьютер задумывает четыре различные цифры из 0,1,2,...9. Игрок делает ходы, чтобы узнать эти цифры и их порядок.
-Каждый ход состоит из четырёх цифр, 0 может стоять на первом месте.
-В ответ компьютер показывает число отгаданных цифр, стоящих на своих местах (число быков) и число отгаданных цифр, стоящих не на своих местах (число коров).
-<h4>Пример</h4>
-Компьютер задумал 0834.
-Игрок сделал ход 8134.
-Компьютер ответил: 2 быка (цифры 3 и 4) и 1 корова (цифра 8). */}
+    }   
 
     return (
         <div className="container">
