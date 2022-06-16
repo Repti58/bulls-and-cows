@@ -36,7 +36,7 @@ const cowsDeclination = (el) => {
                 return (                 
                     <div className="result">                                          
                         {/* Ход {el.stepCount}:   */}
-                        {el.userNumber}  ({el.bulls} {bullsDeclination(el)}, {el.cows} {cowsDeclination(el)})
+                        {el.userNumber} - {el.bulls} {bullsDeclination(el)}, {el.cows} {cowsDeclination(el)}
                         {/* | Загаданное число - {el.randomNumber} */}
                     </div>
                )
