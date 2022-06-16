@@ -123,23 +123,28 @@ function Main() {
 
     return (
         <div className="container">
-            <div className="title">
-                <div>
-                    <h2>БЫКИ И КОРОВЫ</h2>
-                    <h4>логическая игра</h4>
-                </div>
-                <div>
+            <div>
+                
+                    <div className="title">
+                        <h2>БЫКИ И КОРОВЫ</h2>
+                    </div>
+                
+                <div className="underTitle">
+                    <div>
+                        <h4>логическая игра</h4>
+                    </div>
                     {/* <button className="button" onClick={rules}>правила игры</button> */}
-                    <Link to ='/rules'><button className="button" >правила игры</button></Link>
+                    <Link to='/rules'><button className="button" >Правила игры</button></Link>
                     {/* <Routes>
                         <Route path="/rules" element={<Rules />} />
                     </Routes> */}
                    
-                    <h3>Компьютер загадал 4 цифры, попробуйте их отгадать</h3>
+                    <h3>Компьютер уже что то задумал...</h3>
                 </div>
             </div>
             <div className="form">
                 <input className="input" ref={input} autoFocus maxLength={4} value={value} onChange={(event) => setValue(event.target.value)} />
+                
                 <button className="button" disabled={disableBtnShot} onClick={check}>Сделать ход</button>
                 <button className="button" ref={newGameBtn} disabled={disableBtnReset} onClick={reset}>Новая игра</button>
             </div>
