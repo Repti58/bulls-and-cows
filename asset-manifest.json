@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/bulls_and_cows/static/css/main.e0e073a2.css",
+    "main.js": "/bulls_and_cows/static/js/main.2377954e.js",
+    "index.html": "/bulls_and_cows/index.html",
+    "main.e0e073a2.css.map": "/bulls_and_cows/static/css/main.e0e073a2.css.map",
+    "main.2377954e.js.map": "/bulls_and_cows/static/js/main.2377954e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e0e073a2.css",
+    "static/js/main.2377954e.js"
+  ]
+}
