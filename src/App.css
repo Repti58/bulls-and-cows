@@ -119,7 +119,7 @@
 
 .input {
     border: solid 3px rgb(255, 187, 0);
-    border-radius: 8px;
+    border-radius: 15px;
     padding: 3px;
     margin: 5px;
     font-size: 30px;
@@ -140,7 +140,7 @@
     border: solid 3px rgb(255, 187, 0);
     background-color: rgb(255, 187, 0);
     padding: 10px 3px 10px 3px;
-    border-radius: 8px;
+    border-radius: 15px;
     font-size: 30px;
     color: rgb(34, 34, 34);
     margin: 0px 10px 0px 0px;
@@ -152,7 +152,7 @@
     border: solid 3px rgb(255, 187, 0);
     background-color: rgb(255, 187, 0);
     padding: 10px 3px 10px 3px;
-    border-radius: 8px;
+    border-radius: 15px;
     font-size: 30px;
     color: rgb(34, 34, 34);
     margin: 0px 10px 0px 10px;
@@ -165,7 +165,7 @@
     border: solid 3px rgb(238, 174, 0);
     background-color: rgb(238, 174, 0);
     padding: 10px 3px 10px 3px;
-    border-radius: 8px;
+    border-radius: 15px;
     font-size: 30px;
     margin: 0px 10px 0px 10px;
     color: rgb(34, 34, 34);
@@ -176,7 +176,7 @@
     border: solid 3px rgb(255, 187, 0);
     background-color: rgb(255, 187, 0);
     padding: 10px 3px 10px 3px;
-    border-radius: 8px;
+    border-radius: 15px;
     font-size: 30px;
     color: rgb(34, 34, 34);
     margin: 0px 10px 0px 10px;
