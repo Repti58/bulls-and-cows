@@ -25,8 +25,9 @@ const App = () => {
         const [steps, setSteps] = useState([]);
         const [info, setInfo] = useState('')
         const [disableBtnReset, setDisableBtnReset] = useState(true);
-        const [disableBtnShot, setDisableBtnShot] = useState(false);
+        const [disableBtnShot, setDisableBtnShot] = useState(false);        
         const input = React.createRef()
+        
         
     
     
@@ -49,7 +50,7 @@ const App = () => {
         }, [])    
     
     
-        // console.log(`randomNumber ${randomNumberSTR}`);
+        console.log(`randomNumber ${randomNumberSTR}`);
         let userNumber = value;
         // console.log(`userNumber ${userNumber}`);
         stepData.userNumber = userNumber
@@ -82,7 +83,7 @@ const App = () => {
             }
     
             if (bullsCount === 4) {
-                setInfo(`Вы отгадали число c ${(steps[0].stepCount) + 1}-й попытки :)`)
+                setInfo(`Вы отгадали число c ${stepsCount + 1}-й попытки :)`)
                 input.current.readOnly = true
                 setDisableBtnReset(false);
                 setDisableBtnShot(true);
@@ -98,6 +99,7 @@ const App = () => {
             setValue('');
             input.current.focus();
         }
+    
     
         const reset = () => {
             setSteps([]);
