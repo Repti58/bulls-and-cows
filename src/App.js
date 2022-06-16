@@ -50,7 +50,7 @@ const App = () => {
         }, [])    
     
     
-        console.log(`randomNumber ${randomNumberSTR}`);
+        // console.log(`randomNumber ${randomNumberSTR}`);
         let userNumber = value;
         // console.log(`userNumber ${userNumber}`);
         stepData.userNumber = userNumber
