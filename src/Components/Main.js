@@ -4,7 +4,7 @@ import ResultList from "./ResultList";
 import InfoBar from "./InfoBar";
 import { Link } from "react-router-dom";
 
-function Main() {
+function Main(props) {
    
     const stepData = {
         stepCount: 0,
@@ -142,6 +142,10 @@ function Main() {
             <div className="resultBox">
                 <ResultList steps={steps} />
             </div>
+            <div className="logoBox">
+                <img src={props.logo} alt='bullLogo' className="logo" />
+            </div>
+
         </div>
     );
 

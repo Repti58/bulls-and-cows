@@ -163,3 +163,15 @@
 .backLink {
     padding-top: 30px;
 }
+
+.logoBox {
+    /* border: solid 1px red; */
+    /* width: 350px; */
+    text-align: center;
+    margin-top: 30px;
+}
+.logo {
+    /* border: solid 1px rgb(116, 31, 226); */
+    width: 350px;
+    
+}
