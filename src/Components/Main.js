@@ -9,11 +9,17 @@ function Main(props) {
         <div>
             <div className="underTitle">
                 <Link to='/rules'><button className="infoButton" >Правила игры</button></Link>
+                <div class="difficulty">
+                    <button onClick={(e) => props.difficultyRange(3)}>3</button>
+                    <button onClick={(e) => props.difficultyRange(4)}>4</button>
+                    <button onClick={(e) => props.difficultyRange(5)}>5</button>
+                    
+                </div>
                 <h3>Компьютер уже что то задумал...</h3>
             </div>
 
             <div className="form">
-                <input className="input" ref={props.input} autoFocus maxLength={4} value={props.value} onChange={(event) => props.setValue(event.target.value)} />
+                <input className="input" ref={props.input} autoFocus maxLength={props.difficulty} value={props.value} onChange={(event) => props.setValue(event.target.value)} />
                 <div>
                     <InfoBar info={props.info} />
                 </div>

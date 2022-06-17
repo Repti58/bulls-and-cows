@@ -6,6 +6,7 @@ const bullsDeclination = (el) => {
     
     switch (el.bulls) {
         case 0:
+        case 5:
             return 'Быков';
         case 1:
             return 'Бык';
@@ -19,6 +20,7 @@ const cowsDeclination = (el) => {
     
     switch (el.cows) {
         case 0:
+        case 5:
             return 'Коров';
         case 1:
             return 'Корова';
