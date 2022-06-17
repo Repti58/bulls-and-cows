@@ -19,6 +19,7 @@
     /* min-width: 450px; */
     /* background-color: rgb(131, 131, 131); */
     width: 450px;
+    text-align: center;
 
 }
 
@@ -89,14 +90,20 @@
 }
 
 .resultBox {
+    /* margin: 0 auto; */
+    /* width: 100px; */
+    /* border: solid 1px rgb(255, 72, 0); */
     padding-top: 20px;
+    text-align: left;
+    display: inline-block;
 }
 
 .result {
     /* border: solid 1px rgb(208, 255, 0); */
+    
     margin: 0 auto;
     padding: 10px 0px 10px 0px;
-    width: 310px;
+    /* width: 0px; */
     text-align: left;    
     color: rgb(44, 44, 44);
     font-size: 18pt;    

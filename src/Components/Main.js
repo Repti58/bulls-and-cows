@@ -9,7 +9,7 @@ function Main(props) {
         <div>
             <div className="underTitle">
                 <Link to='/rules'><button className="infoButton" >Правила игры</button></Link>
-                <div class="difficulty">
+                <div className="difficulty">
                     <button onClick={(e) => props.difficultyRange(3)}>3</button>
                     <button onClick={(e) => props.difficultyRange(4)}>4</button>
                     <button onClick={(e) => props.difficultyRange(5)}>5</button>
@@ -24,8 +24,8 @@ function Main(props) {
                     <InfoBar info={props.info} />
                 </div>
                 <div className="divButton">
-                    <button className="button" disabled={props.disableBtnShot} onClick={props.check}>Сделать ход</button>
-                    <button className="button" disabled={props.disableBtnReset} onClick={props.reset}>Новая игра</button>
+                    <button className="button" disabled={props.disableBtnShot} onClick={props.checkInput}>Сделать ход</button>
+                    <button className="button" disabled={props.disableBtnReset} onClick={props.resetGame}>Новая игра</button>
                 </div>
             </div>
             <div className="resultBox">
