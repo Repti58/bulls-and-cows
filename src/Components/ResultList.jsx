@@ -6,6 +6,7 @@ const bullsDeclination = (el) => {
     debugger
     switch (el.bulls) {
         case 0:
+        case 5:
             return 'Быков';
         case 1:
             return 'Бык';
@@ -19,6 +20,7 @@ const cowsDeclination = (el) => {
     debugger
     switch (el.cows) {
         case 0:
+        case 5:
             return 'Коров';
         case 1:
             return 'Корова';
@@ -32,7 +34,7 @@ const cowsDeclination = (el) => {
     return (
         <div>
             {props.steps.map(el => {
-                debugger
+               
                 return (                 
                     <div className="result">                                          
                         {/* Ход {el.stepCount}:   */}
