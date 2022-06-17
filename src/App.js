@@ -29,6 +29,7 @@ const App = () => {
         const [difficulty, setDifficulty] = useState(2)
         const input = React.createRef()
         
+        
     
     
         function randomNumber() {
@@ -83,8 +84,8 @@ const App = () => {
                 }
             }
     
-            if (bullsCount === difficulty) {
-                setInfo(`Вы отгадали число c ${(steps[0].stepCount) + 1}-й попытки :)`)
+            if (bullsCount === 4) {
+                setInfo(`Вы отгадали число c ${stepsCount + 1}-й попытки :)`)
                 input.current.readOnly = true
                 setDisableBtnReset(false);
                 setDisableBtnShot(true);
@@ -100,6 +101,7 @@ const App = () => {
             setValue('');
             input.current.focus();
         }
+    
     
         const reset = () => {
             debugger

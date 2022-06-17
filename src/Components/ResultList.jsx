@@ -3,7 +3,7 @@ import React from "react";
 
 const ResultList = (props) => {
 const bullsDeclination = (el) => {
-    debugger
+    
     switch (el.bulls) {
         case 0:
         case 5:
@@ -17,7 +17,7 @@ const bullsDeclination = (el) => {
     }
 }
 const cowsDeclination = (el) => {
-    debugger
+    
     switch (el.cows) {
         case 0:
         case 5:
@@ -34,11 +34,11 @@ const cowsDeclination = (el) => {
     return (
         <div>
             {props.steps.map(el => {
-               
+                
                 return (                 
                     <div className="result">                                          
                         {/* Ход {el.stepCount}:   */}
-                        {el.userNumber} - {el.bulls} {bullsDeclination(el)}, {el.cows} {cowsDeclination(el)}
+                        <span className="userNumber">{el.userNumber}</span> - {el.bulls} {bullsDeclination(el)}, {el.cows} {cowsDeclination(el)}
                         {/* | Загаданное число - {el.randomNumber} */}
                     </div>
                )
