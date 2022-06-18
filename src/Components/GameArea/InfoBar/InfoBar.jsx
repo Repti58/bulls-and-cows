@@ -1,13 +1,11 @@
-import '../App.css';
+import '../../../App.css';
 
 
 const InfoBar = (props) => {
 
     return (
         <div className='infobar'>
-            
-                {props.info}
-            
+            {props.info}
         </div>
     )
 }

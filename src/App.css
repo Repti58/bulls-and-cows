@@ -1,18 +1,3 @@
-/* .infoBar {
-    height: 30px;
-    color: crimson;
-    opacity: 0;
-    animation: ani 2.5s forwards;
-} */
-
-/* @keyframes ani {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-} */
-
-
-
-
 .container {
     /* border: solid 1px red; */
     margin: 0 auto;
@@ -35,7 +20,7 @@
     font-weight: 700;
     padding-bottom: 0px;
     /* border-bottom: 2px solid red; */
-    
+
 }
 
 .title2 {
@@ -51,7 +36,23 @@
     font-size: 14pt;
     margin-bottom: 20px;
     padding-bottom: 20px;
-    font-weight: 700;    
+    font-weight: 700;
+}
+
+.title3 {
+    /* border: solid 1px rgb(255, 0, 191); */
+    margin: 0 auto;
+    /* width: 450px; */
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* color: firebrick; */
+    line-height: 10pt;
+    color: rgb(44, 44, 44);
+    /* border-bottom: 5px solid rgb(184, 184, 184); */
+    font-size: 12pt;
+    margin: 20px 0px 10px 0px;
+
+    font-weight: 500;
 }
 
 .underTitle {
@@ -69,7 +70,7 @@
 .form {
     /* border: solid 1px rgb(55, 0, 255); */
     margin: 0 auto;
-    
+
     /* width: 450px; */
     text-align: center;
     /* min-width: 220px; */
@@ -79,8 +80,8 @@
     /* border: solid 1px rgb(0, 255, 55); */
     margin: 0 auto;
     /* width: 280px; */
-    text-align: left;
-    padding: 5px 5px 5px 45px;
+    text-align: center;
+    padding: 0px 5px 5px 5px;
     height: 20px;
     color: firebrick;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -100,13 +101,13 @@
 
 .result {
     /* border: solid 1px rgb(208, 255, 0); */
-    
+
     margin: 0 auto;
     padding: 10px 0px 10px 0px;
     /* width: 0px; */
-    text-align: left;    
+    text-align: left;
     color: rgb(44, 44, 44);
-    font-size: 18pt;    
+    font-size: 18pt;
     line-height: 10pt;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
@@ -116,9 +117,9 @@
     margin: 0 auto;
     padding: 10px 0px 10px 0px;
     width: 310px;
-    text-align: left;    
+    text-align: left;
     color: firebrick;
-    font-size: 18pt;    
+    font-size: 18pt;
     line-height: 10pt;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
@@ -167,6 +168,10 @@
     font-weight: 400;
 }
 
+.button:hover {
+    color: rgb(70, 70, 70);
+}
+
 .button:active {
 
     border: solid 3px rgb(238, 174, 0);
@@ -179,7 +184,6 @@
 }
 
 .button:disabled {
-
     border: solid 3px rgb(255, 187, 0);
     background-color: rgb(255, 187, 0);
     padding: 10px 3px 10px 3px;
@@ -190,8 +194,59 @@
     opacity: 50%;
 }
 
+
+
+.form_radio_group {
+    /* border: solid 1px rgb(208, 255, 0); */
+    display: inline-block;
+    overflow: hidden;
+    font-size: 30px;
+
+}
+
+.form_radio_group-item {
+    display: inline-block;
+    float: left;
+
+}
+
+.form_radio_group input[type=radio] {
+    display: none;
+    padding: 10px;
+}
+
+.form_radio_group label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 15px;
+    line-height: 34px;
+    border: 1px solid #999;
+    border-right: none;
+    user-select: none;
+    color: rgb(34, 34, 34)
+}
+
+.form_radio_group .form_radio_group-item:first-child label {
+    border-radius: 6px 0 0 6px;
+}
+
+.form_radio_group .form_radio_group-item:last-child label {
+    border-radius: 0 6px 6px 0;
+    border-right: 1px solid #999;
+}
+
+/* Checked */
+.form_radio_group input[type=radio]:checked+label {
+    background: rgb(255, 187, 0);
+}
+
+/* Hover */
+.form_radio_group label:hover {
+    color: rgb(70, 70, 70);
+}
+
 .rules {
-     /* border: solid 1px rgb(208, 255, 0); */
+    /* border: solid 1px rgb(208, 255, 0); */
     margin: 0 auto;
     width: 400px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -210,8 +265,9 @@
     text-align: center;
     margin-top: 30px;
 }
+
 .logo {
     /* border: solid 1px rgb(116, 31, 226); */
     width: 350px;
-    
+
 }
