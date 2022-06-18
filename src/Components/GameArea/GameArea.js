@@ -8,7 +8,7 @@ function GameArea(props) {
     return (
         <div>
             <div className="underTitle">
-                <Link to='/rules'><button className="infoButton" >Правила игры</button></Link>
+                <Link to='/rules'><button className="button" >Правила игры</button></Link>
                 <div>
                     <p className="title3">Сложность (количество цифр):</p>
                     <div className="form_radio_group">
