@@ -22,7 +22,8 @@ const App = () => {
     const [info, setInfo] = useState('')
     const [disableBtnReset, setDisableBtnReset] = useState(true);
     const [disableBtnShot, setDisableBtnShot] = useState(false);
-    const [difficulty, setDifficulty] = useState(4)    
+    const [difficulty, setDifficulty] = useState(4);
+    const [data, setData] = useState(null);   
     const input = React.createRef()
 
 
@@ -43,7 +44,13 @@ const App = () => {
 
 
     useEffect(() => {
+        debugger
         getRandomNumber();
+        fetch('http://localhost:3004/api')
+        .then((response) => response.json())
+        // console.log(response.json())
+        .then(response => setData(response.message))
+        .catch(err => console.error(err));
     }, [])
 
 
@@ -133,6 +140,16 @@ const App = () => {
         resetGame()
     }, [difficulty])
 
+    // async function getApi() {
+    //     const response = await fetch('http://localhost:3005/api')
+    //     .then((response) => response.json())
+    //     co
+    //     .then(response => setData(response.message))
+
+
+//         const response = await fetch(`https://catfact.ninja/facts?page=${props}`);
+//   return await response.json();}
+    
 
     return (
         <div className="container">
@@ -150,6 +167,9 @@ const App = () => {
                     <Route path="/main" element={<GameArea getNumberDeclination={getNumberDeclination} addDifficultyRange={addDifficultyRange} difficulty={difficulty} input={input} logo={logo} value={value} setValue={setValue} info={info} disableBtnShot={disableBtnShot} checkInput={checkInput} disableBtnReset={disableBtnReset} resetGame={resetGame} steps={steps} />} />
                     <Route path="/*" element={<GameArea getNumberDeclination={getNumberDeclination} addDifficultyRange={addDifficultyRange} difficulty={difficulty} input={input} logo={logo} value={value} setValue={setValue} info={info} disableBtnShot={disableBtnShot} checkInput={checkInput} disableBtnReset={disableBtnReset} resetGame={resetGame} steps={steps} />} />
                 </Routes>
+                <p>
+                    {!data ? 'Loading' : data}
+                </p>
             </div>
         </div>
     )
