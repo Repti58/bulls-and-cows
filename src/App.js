@@ -46,7 +46,7 @@ const App = () => {
     useEffect(() => {
         debugger
         getRandomNumber();
-        fetch('http://localhost:3004/api')
+        fetch('http://localhost:3002/api')
         .then((response) => response.json())
         // console.log(response.json())
         .then(response => setData(response.message))
