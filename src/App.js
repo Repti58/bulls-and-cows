@@ -43,23 +43,19 @@ const App = () => {
     }
 
 
-   const postData = (stepsCount) => {
-    const data = {number: stepsCount};
-    const options = {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {'Content-Type': 'application/json'}
-    };
-    console.log(options);
-    fetch('http://localhost:3002/api', options)
-
-   }
+    const postData = (stepsCount) => {
+        const data = { number: stepsCount };
+        const options = {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: { 'Content-Type': 'application/json' }
+        };
+        console.log(options);
+        fetch('http://localhost:3002/api', options)
+    }
     
    
-   
     useEffect(() => {
-        
-        
         fetch('http://localhost:3002/api')
         // .then((res) => console.log(res.json()))
         .then((res) => res.json())
@@ -67,6 +63,11 @@ const App = () => {
         // .then((res) => console.log(res.json()))
         .then(res => setData(res))
         .catch(err => console.error(err));
+    }, [disableBtnReset])
+
+
+    useEffect(() => {
+       
         getRandomNumber();
 
 
