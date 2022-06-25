@@ -29,7 +29,7 @@ const App = () => {
 
 
     function getRandomNumber() {
-
+       
         const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
         const newArr = [];
         let temp = 9;
@@ -43,18 +43,37 @@ const App = () => {
     }
 
 
+   const postData = (stepsCount) => {
+    const data = {number: stepsCount};
+    const options = {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {'Content-Type': 'application/json'}
+    };
+    console.log(options);
+    fetch('http://localhost:3002/api', options)
+
+   }
+    
+   
+   
     useEffect(() => {
-        debugger
-        getRandomNumber();
+        
+        
         fetch('http://localhost:3002/api')
-        .then((response) => response.json())
-        // console.log(response.json())
-        .then(response => setData(response.message))
+        // .then((res) => console.log(res.json()))
+        .then((res) => res.json())
+        // console.log(res.json())
+        // .then((res) => console.log(res.json()))
+        .then(res => setData(res))
         .catch(err => console.error(err));
+        getRandomNumber();
+
+
     }, [])
 
 
-    // console.log(`randomNumber ${randomNumberSTR}`);
+    console.log(`randomNumber ${randomNumberSTR}`);
     let userNumber = value;
     // console.log(`userNumber ${userNumber}`);
     stepData.userNumber = userNumber
@@ -100,8 +119,9 @@ const App = () => {
         }
 
         if (bullsCount === difficulty) {
-            setInfo(`Вы отгадали c ${stepsCount + 1}-й попытки :)`)
-            input.current.readOnly = true
+            setInfo(`Вы отгадали c ${stepsCount + 1}-й попытки :)`);
+            postData(stepsCount + 1);
+            input.current.readOnly = true;
             setDisableBtnReset(false);
             setDisableBtnShot(true);
         }
@@ -118,7 +138,7 @@ const App = () => {
     }
 
     const resetGame = () => {
-        debugger
+        
         setSteps([]);
         setStepsCount(0);
         setInfo('');
@@ -131,7 +151,7 @@ const App = () => {
     }
 
     const addDifficultyRange = (props) => {
-        debugger
+       
         setDifficulty(parseInt(props));
 
     }
@@ -167,9 +187,19 @@ const App = () => {
                     <Route path="/main" element={<GameArea getNumberDeclination={getNumberDeclination} addDifficultyRange={addDifficultyRange} difficulty={difficulty} input={input} logo={logo} value={value} setValue={setValue} info={info} disableBtnShot={disableBtnShot} checkInput={checkInput} disableBtnReset={disableBtnReset} resetGame={resetGame} steps={steps} />} />
                     <Route path="/*" element={<GameArea getNumberDeclination={getNumberDeclination} addDifficultyRange={addDifficultyRange} difficulty={difficulty} input={input} logo={logo} value={value} setValue={setValue} info={info} disableBtnShot={disableBtnShot} checkInput={checkInput} disableBtnReset={disableBtnReset} resetGame={resetGame} steps={steps} />} />
                 </Routes>
-                <p>
-                    {!data ? 'Loading' : data}
-                </p>
+                <div>
+                    {/* {data[0]} */}
+                    {!data ? 'Loading': data.map((el) => {
+                        return (
+                            <div>
+                           { `${el.date} - ${el.steps}`}
+                           <hr/>
+                            </div>
+                        )
+                    })}
+                    
+
+                </div>
             </div>
         </div>
     )

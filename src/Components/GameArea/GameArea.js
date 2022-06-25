@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ResultList from "./ResultList/ResultList";
 import InfoBar from "./InfoBar/InfoBar";
 import { Link } from "react-router-dom";
@@ -15,15 +15,15 @@ function GameArea(props) {
 
                         <div className="form_radio_group-item">
                             <input id="radio-1" type="radio" name="radio" value='3' onChange={(event) => props.addDifficultyRange(event.target.value)} checked={props.difficulty === 3 ? true : false} />
-                            <label for="radio-1">3</label>
+                            <label htmlFor="radio-1">3</label>
                         </div>
                         <div className="form_radio_group-item">
                             <input id="radio-2" type="radio" name="radio" value='4' onChange={(event) => props.addDifficultyRange(event.target.value)} checked={props.difficulty === 4 ? true : false} />
-                            <label for="radio-2">4</label>
+                            <label htmlFor="radio-2">4</label>
                         </div>
                         <div className="form_radio_group-item">
                             <input id="radio-3" type="radio" name="radio" value='5' onChange={(event) => props.addDifficultyRange(event.target.value)} checked={props.difficulty === 5 ? true : false} />
-                            <label for="radio-3">5</label>
+                            <label htmlFor="radio-3">5</label>
                         </div>
 
                     </div>
