@@ -20,9 +20,9 @@ function GameArea() {
     const [info, setInfo] = useState('')
     const [disableBtnReset, setDisableBtnReset] = useState(true);
     const [disableBtnShot, setDisableBtnShot] = useState(false);
-    const input = React.createRef()
     const [randomNumberSTR, setRandomNumberSTR] = useState('');
     const [difficulty, setDifficulty] = useState(4);
+    const input = React.createRef()
 
 
     function getRandomNumber() {
@@ -151,6 +151,7 @@ function GameArea() {
         <div>
             <div className="underTitle">
                 <Link to='/rules'><button className="button" >Правила игры</button></Link>
+                <Link to='/gamehistory'><button className="button" >История</button></Link>
                 <div>
                     <p className="title3">Сложность (количество цифр):</p>
                     <div className="form_radio_group">
@@ -188,10 +189,7 @@ function GameArea() {
             </div>
             <div className="logoBox">
                 <img src={logo} alt='bullLogo' className="logo" />
-            </div>
-            <div className="divButton">
-                <Link to='/gamehistory'><button className="button" >История</button></Link>
-            </div>
+            </div>           
         </div>
     );
 }
