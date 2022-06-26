@@ -13,7 +13,9 @@ const ResultList = (props) => {
             case 2:
             case 3:
             case 4:
-                return 'Быка'
+                return 'Быка';
+            default:
+                return ''
         }
     }
     const cowsDeclination = (el) => {
@@ -27,7 +29,9 @@ const ResultList = (props) => {
             case 2:
             case 3:
             case 4:
-                return 'Коровы'
+                return 'Коровы';
+            default:
+                return ''
         }
     }
 
