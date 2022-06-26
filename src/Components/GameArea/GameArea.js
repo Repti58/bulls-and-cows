@@ -47,7 +47,9 @@ function GameArea(props) {
             <div className="logoBox">
                 <img src={props.logo} alt='bullLogo' className="logo" />
             </div>
-
+            <div>
+                <Link to='/gamehistory'><button className="button" >История</button></Link>
+            </div>
         </div>
     );
 }

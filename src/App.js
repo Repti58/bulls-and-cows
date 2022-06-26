@@ -1,12 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import GameArea from "./Components/GameArea/GameArea";
 import Rules from "./Components/Rules/Rules";
+import GameHistory from "./Components/GameHistory/GameHistory";
 import logo from './img/bull.png';
 import React from "react";
 import { useState, useEffect } from "react";
 
 const App = () => {    
-
+debugger
     const stepData = {
         stepCount: 0,
         userNumber: '',
@@ -23,7 +24,7 @@ const App = () => {
     const [disableBtnReset, setDisableBtnReset] = useState(true);
     const [disableBtnShot, setDisableBtnShot] = useState(false);
     const [difficulty, setDifficulty] = useState(4);
-    const [data, setData] = useState(null);   
+    const [historyData, setHistoryData] = useState(null);   
     const input = React.createRef()
 
 
@@ -44,13 +45,18 @@ const App = () => {
 
 
     const postData = (stepsCount) => {
-        const data = { number: stepsCount };
+        debugger
+        const data = {
+            date: new Date().toLocaleString(),
+            difficulty: difficulty,
+            number: stepsCount };
         const options = {
             method: 'POST',
             body: JSON.stringify(data),
             headers: { 'Content-Type': 'application/json' }
         };
         console.log(options);
+        
         fetch('http://localhost:3002/api', options)
     }
     
@@ -61,7 +67,7 @@ const App = () => {
         .then((res) => res.json())
         // console.log(res.json())
         // .then((res) => console.log(res.json()))
-        .then(res => setData(res))
+        .then(res => setHistoryData(res))
         .catch(err => console.error(err));
     }, [disableBtnReset])
 
@@ -139,14 +145,16 @@ const App = () => {
     }
 
     const resetGame = () => {
-        
+
         setSteps([]);
         setStepsCount(0);
         setInfo('');
         setValue('');
         getRandomNumber();
+
         input.current.focus();
         input.current.readOnly = false
+
         setDisableBtnShot(false);
         setDisableBtnReset(true);
     }
@@ -187,20 +195,9 @@ const App = () => {
                     <Route path="/rules" element={<Rules />} />
                     <Route path="/main" element={<GameArea getNumberDeclination={getNumberDeclination} addDifficultyRange={addDifficultyRange} difficulty={difficulty} input={input} logo={logo} value={value} setValue={setValue} info={info} disableBtnShot={disableBtnShot} checkInput={checkInput} disableBtnReset={disableBtnReset} resetGame={resetGame} steps={steps} />} />
                     <Route path="/*" element={<GameArea getNumberDeclination={getNumberDeclination} addDifficultyRange={addDifficultyRange} difficulty={difficulty} input={input} logo={logo} value={value} setValue={setValue} info={info} disableBtnShot={disableBtnShot} checkInput={checkInput} disableBtnReset={disableBtnReset} resetGame={resetGame} steps={steps} />} />
+                    <Route path="/gamehistory" element={<GameHistory historyData={historyData}/>} />                    
                 </Routes>
-                <div>
-                    {/* {data[0]} */}
-                    {!data ? 'Loading': data.map((el) => {
-                        return (
-                            <div>
-                           { `${el.date} - ${el.steps}`}
-                           <hr/>
-                            </div>
-                        )
-                    })}
-                    
-
-                </div>
+                
             </div>
         </div>
     )
