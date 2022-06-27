@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const GameHistory = (props) => {
+const GameHistory = () => {
+    debugger
     const [historyData, setHistoryData] = useState(null);
 
     useEffect(() => {
@@ -20,24 +21,22 @@ const GameHistory = (props) => {
     return (
         <div>
             <table id="customers">
+                <thead>
                 <tr>
                     <th>Дата</th>
                     <th>Сложность</th>
                     <th>Попытки</th>
                 </tr>
-                {!historyData ? 'Loading' : historyData.map((el) => {
+                </thead>
+                {!historyData ? 'Loading' : historyData.map((el)=>{
                     return (
+                        <tbody>
                         <tr>
-                            <td>
-                                {el.date}
-                            </td>
-                            <td>
-                                {el.difficulty}
-                            </td>
-                            <td>
-                                {el.steps}
-                            </td>
+                            <td>{el.date}</td>
+                            <td>{el.difficulty}</td>
+                            <td>{el.steps}</td>
                         </tr>
+                        </tbody>
                     )
                 })}
             </table>

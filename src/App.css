@@ -154,48 +154,37 @@ body {
 
 .button {
     width: 180px;
-    height: 60px;
+    height: 40px;
     border: solid 3px rgb(255, 187, 0);
     background-color: rgb(255, 187, 0);
-    padding: 10px 6px 10px 6px;
+    padding: 3px;
     border-radius: 15px;
-    font-size: 20px;
+    font-size: 15px;
     color: rgb(34, 34, 34);
     margin: 0px 10px 0px 10px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
+    cursor: pointer;    
+}
+
+.button__game-button {
+    height: 60px;
+    padding: 10px 6px 10px 6px;
+    font-size: 20px;
 }
 
 .button:hover {
-    color: rgb(70, 70, 70);
+    color: rgb(70, 70, 70);    
 }
 
-.button:active {
-    width: 180px;
-    height: 60px;
+.button:active {   
     border: solid 3px rgb(238, 174, 0);
-    background-color: rgb(238, 174, 0);
-    padding: 10px 6px 10px 6px;
-    border-radius: 15px;
-    font-size: 20px;
-    margin: 0px 10px 0px 10px;
-    color: rgb(34, 34, 34);
+    background-color: rgb(238, 174, 0);    
 }
 
-.button:disabled {
-    width: 180px;
-    height: 60px;
-    border: solid 3px rgb(255, 187, 0);
-    background-color: rgb(255, 187, 0);
-    padding: 10px 6px 10px 6px;
-    border-radius: 15px;
-    font-size: 20px;
-    color: rgb(34, 34, 34);
-    margin: 0px 10px 0px 10px;
+.button:disabled {    
     opacity: 50%;
 }
-
-
 
 .form_radio_group {
     /* border: solid 1px rgb(208, 255, 0); */
@@ -209,6 +198,7 @@ body {
     display: inline-block;
     float: left;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    
 }
 
 .form_radio_group input[type=radio] {
@@ -269,7 +259,7 @@ body {
 
 .logo {
     /* border: solid 1px rgb(116, 31, 226); */
-    width: 150px;
+    width: 250px;
 
 }
 
