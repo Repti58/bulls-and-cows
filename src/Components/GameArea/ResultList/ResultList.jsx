@@ -37,10 +37,10 @@ const ResultList = (props) => {
 
     return (
         <div>
-            {props.steps.map(el => {
+            {props.steps.map((el, index) => {
 
                 return (
-                    <div className="result">
+                    <div key={index} className="result">
                         {/* Ход {el.stepCount}:   */}
                         <span className="userNumber">{el.userNumber}</span> - {el.bulls} {bullsDeclination(el)}, {el.cows} {cowsDeclination(el)}
                         {/* | Загаданное число - {el.randomNumber} */}
