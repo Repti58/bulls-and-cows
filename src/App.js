@@ -179,25 +179,10 @@ const App = () => {
                             getNumberDeclination={getNumberDeclination}
                             input={input}
                             value={value}
-                            setValue={setValue}
-                            
+                            setValue={setValue}                            
                         />}
                     />
-                    {/* <Route path="/*" element={
-                        <GameArea
-                            steps={steps} info={info}
-                            disableBtnShot={disableBtnShot}
-                            disableBtnReset={disableBtnReset}
-                            checkInput={checkInput}
-                            resetGame={resetGame}
-                            addDifficultyRange={addDifficultyRange}
-                            difficulty={difficulty}
-                            getNumberDeclination={getNumberDeclination}
-                            input={input}
-                            value={value}
-                            setValue={setValue}
-                        />}
-                    /> */}
+                   
                     <Route path="/gamehistory" element={<GameHistory />} />
                 </Routes>
             </div>
