@@ -17,34 +17,49 @@ const GameHistory = () => {
             .catch(err => console.error(err));
     }, [])
 
-    
-    return (
-        <div>
-            <table id="customers">
-                <thead>
-                <tr>
-                    <th>Дата</th>
-                    <th>Сложность</th>
-                    <th>Попытки</th>
-                </tr>
-                </thead>
-                {!historyData ? 'Loading' : historyData.map((el)=>{
-                    return (
-                        <tbody>
+
+    function GameHistoryTable() {
+        debugger
+        const table = () => {
+            return (
+                <table id="games">
+
+                    <thead>
                         <tr>
-                            <td>{el.date}</td>
-                            <td>{el.difficulty}</td>
-                            <td>{el.steps}</td>
+                            <th>Дата</th>
+                            <th>Сложность</th>
+                            <th>Попытки</th>
                         </tr>
-                        </tbody>
-                    )
-                })}
-            </table>
-            <div className="backLink">
-                <Link to='/main'><button className="button">Назад к игре</button></Link>
+                    </thead>
+                    <tbody>
+                        {historyData.map((el, index) => {
+                            return (
+                                <tr key={index}>
+                                    <td>{el.date}</td>
+                                    <td>{el.difficulty}</td>
+                                    <td>{el.steps}</td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
+
+                </table>
+            )
+        }
+
+        return (
+            <div>
+                <div>
+                    {!historyData ? 'Loading' : table()}
+                </div>
+                <div className="backLink">
+                    <Link to='/main'><button className="button">Назад к игре</button></Link>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
+
+    return GameHistoryTable()
 
 }
 
