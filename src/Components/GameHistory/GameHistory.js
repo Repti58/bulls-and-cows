@@ -9,13 +9,13 @@ const GameHistory = () => {
 
 
 const bestResultsFetch = () => {
-   
+    fetch('http://localhost:3002/api_best_results')
     // .then((res) => console.log(res.json()))
-    // .then((res) => res.json())
-    // console.log(res.json())
+    .then((res) => res.json())
+    
     // .then((res) => console.log(res.json()))
-    // .then(res => setBestResults(res))    
-    // .catch(err => console.error(err));
+    .then(res => setBestResults(res))    
+    .catch(err => console.error(err));
 }
 
 const historyDataFetch = () => {
@@ -44,8 +44,8 @@ const historyDataFetch = () => {
         // fetchData()
 
 
-        // bestResultsFetch()
-        historyDataFetch()
+        bestResultsFetch()
+        // historyDataFetch()
 
 
         // fetch('http://localhost:3002/api')
