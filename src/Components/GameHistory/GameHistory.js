@@ -5,19 +5,94 @@ import { useState, useEffect } from "react";
 const GameHistory = () => {
     debugger
     const [historyData, setHistoryData] = useState(null);
+    const [bestResults, setBestResults] = useState(null);
 
+
+const bestResultsFetch = () => {
+    fetch('http://localhost:3002/api_best_results')
+    // .then((res) => console.log(res.json()))
+    .then((res) => res.json())
+    // console.log(res.json())
+    // .then((res) => console.log(res.json()))
+    .then(res => setBestResults(res))    
+    .catch(err => console.error(err));
+}
+
+const historyDataFetch = () => {
+    fetch('http://localhost:3002/api')
+    // .then((res) => console.log(res.json()))
+    .then((res) => res.json())
+    // console.log(res.json())
+    // .then((res) => console.log(res.json()))
+    .then(res => setHistoryData(res))    
+    .catch(err => console.error(err));
+}
+
+async function fetchData() {
+debugger
+ 
+    let response = await fetch('http://localhost:3002/api');
+    let fetchHystoryData = await response.json();
+    setHistoryData(fetchHystoryData)     
+    
+    let response2 = await fetch('http://localhost:3002/api_best_results');
+    let fetchBestResults = await response2.json();
+    setBestResults(fetchBestResults)
+}
     useEffect(() => {
         debugger
-        fetch('http://localhost:3002/api')
-            // .then((res) => console.log(res.json()))
-            .then((res) => res.json())
-            // console.log(res.json())
-            // .then((res) => console.log(res.json()))
-            .then(res => setHistoryData(res.reverse()))
-            .catch(err => console.error(err));
-    }, [])
+        fetchData()
 
 
+        // bestResultsFetch()
+        // historyDataFetch()
+
+
+        // fetch('http://localhost:3002/api')
+        //     // .then((res) => console.log(res.json()))
+        //     .then((res) => res.json())
+        //     // console.log(res.json())
+        //     // .then((res) => console.log(res.json()))
+        //     .then(res => setHistoryData(res.reverse()))
+        //     .catch(err => console.error(err));
+            
+            // fetch('http://localhost:3002/api_best_results')
+            // // .then((res) => console.log(res.json()))
+            // .then((res) => res.json())
+            // // console.log(res.json())
+            // // .then((res) => console.log(res.json()))
+            // .then(res => setBestResults(res))
+            
+            // .catch(err => console.error(err));
+        }, [])
+
+
+    function bestResultsTable() {
+        debugger
+        return (
+            <table id="games">
+                <thead>
+                    <tr>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    {/* <td>3</td>
+                    <td>4</td>
+                    <td>5</td> */}
+                    <td>{!bestResults ? "Loading" : bestResults[0].steps }</td>
+                    <td>{!bestResults ? "Loading" : bestResults[1].steps}</td>
+                    <td>{!bestResults ? "Loading" : bestResults[2].steps}</td>
+                    </tr>
+                </tbody>
+            </table>
+        )
+
+    }
     function GameHistoryTable() {
         debugger
         const table = () => {
@@ -59,8 +134,12 @@ const GameHistory = () => {
         )
     }
 
-    return GameHistoryTable()
-
+    return (
+        <div>
+            <div>{bestResultsTable()}</div>
+            <div>{GameHistoryTable()}</div>
+        </div>
+    )
 }
 
 export default GameHistory;
