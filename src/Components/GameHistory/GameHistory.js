@@ -9,13 +9,13 @@ const GameHistory = () => {
 
 
 const bestResultsFetch = () => {
-    fetch('http://localhost:3002/api_best_results')
+   
     // .then((res) => console.log(res.json()))
-    .then((res) => res.json())
+    // .then((res) => res.json())
     // console.log(res.json())
     // .then((res) => console.log(res.json()))
-    .then(res => setBestResults(res))    
-    .catch(err => console.error(err));
+    // .then(res => setBestResults(res))    
+    // .catch(err => console.error(err));
 }
 
 const historyDataFetch = () => {
@@ -24,28 +24,28 @@ const historyDataFetch = () => {
     .then((res) => res.json())
     // console.log(res.json())
     // .then((res) => console.log(res.json()))
-    .then(res => setHistoryData(res))    
+    .then(res => setHistoryData(res.reverse()))    
     .catch(err => console.error(err));
 }
 
-async function fetchData() {
-debugger
+// async function fetchData() {
+// debugger
  
-    let response = await fetch('http://localhost:3002/api');
-    let fetchHystoryData = await response.json();
-    setHistoryData(fetchHystoryData)     
+//     let response = await fetch('http://localhost:3002/api');
+//     let fetchHystoryData = await response.json();
+//     setHistoryData(fetchHystoryData)     
     
-    let response2 = await fetch('http://localhost:3002/api_best_results');
-    let fetchBestResults = await response2.json();
-    setBestResults(fetchBestResults)
-}
+//     let response2 = await fetch('http://localhost:3002/api_best_results');
+//     let fetchBestResults = await response2.json();
+//     setBestResults(fetchBestResults)
+// }
     useEffect(() => {
         debugger
-        fetchData()
+        // fetchData()
 
 
         // bestResultsFetch()
-        // historyDataFetch()
+        historyDataFetch()
 
 
         // fetch('http://localhost:3002/api')
