@@ -3,29 +3,36 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const GameHistory = () => {
-    debugger
+    
     const [historyData, setHistoryData] = useState(null);
     const [bestResults, setBestResults] = useState(null);
 
 
-const bestResultsFetch = () => {
-    fetch('http://localhost:3002/api_best_results')
+async function bestResultsFetch() {
+    debugger
+    const res = (await fetch('http://localhost:3002/api_best_results')).json()
+    return res
+    // console.log(res);
     // .then((res) => console.log(res.json()))
-    .then((res) => res.json())
+    
     
     // .then((res) => console.log(res.json()))
-    .then(res => setBestResults(res))    
-    .catch(err => console.error(err));
+    // .then(res => setBestResults(res))    
+    // .catch(err => console.error(err));
 }
 
-const historyDataFetch = () => {
-    fetch('http://localhost:3002/api')
+async function historyDataFetch () {
+    debugger
+   let res = await fetch('http://localhost:3002/api')
+   res = await res.json()
+   return res
+//    console.log(res)
     // .then((res) => console.log(res.json()))
-    .then((res) => res.json())
+    // .then((res) => res.json())
     // console.log(res.json())
     // .then((res) => console.log(res.json()))
-    .then(res => setHistoryData(res.reverse()))    
-    .catch(err => console.error(err));
+    // .then(res => setHistoryData(res.reverse()))    
+    // .catch(err => console.error(err));
 }
 
 // async function fetchData() {
@@ -39,13 +46,18 @@ const historyDataFetch = () => {
 //     let fetchBestResults = await response2.json();
 //     setBestResults(fetchBestResults)
 // }
+
+
+async function fetchRequests() {
+    debugger
+    const fetchHistoryData = await historyDataFetch();
+    console.log(fetchHistoryData);
+    const fetchbestResults = await bestResultsFetch();
+    console.log(fetchbestResults);
+}
     useEffect(() => {
         debugger
-        // fetchData()
-
-
-        bestResultsFetch()
-        // historyDataFetch()
+        fetchRequests()
 
 
         // fetch('http://localhost:3002/api')
@@ -68,7 +80,7 @@ const historyDataFetch = () => {
 
 
     function bestResultsTable() {
-        debugger
+        
         return (
             <table id="games">
                 <thead>
@@ -94,7 +106,7 @@ const historyDataFetch = () => {
 
     }
     function GameHistoryTable() {
-        debugger
+        
         const table = () => {
             return (
                 <table id="games">
@@ -136,8 +148,8 @@ const historyDataFetch = () => {
 
     return (
         <div>
-            <div>{bestResultsTable()}</div>
-            <div>{GameHistoryTable()}</div>
+            {/* <div>{bestResultsTable()}</div>
+            <div>{GameHistoryTable()}</div> */}
         </div>
     )
 }

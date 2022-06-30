@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 
 
 const App = () => {
-    debugger
+    
     const stepData = {
         stepCount: 0,
         userNumber: '',
@@ -27,7 +27,7 @@ const App = () => {
     const input = React.createRef()
 
     const getNumberDeclination = () => {
-        debugger
+        
         switch (difficulty) {
             case 3:
             case 4:
@@ -40,8 +40,7 @@ const App = () => {
     }
 
     const postData = (stepsCount) => {
-        debugger
-        debugger
+       
         const data = {
             date: new Date().toLocaleString(),
             difficulty: difficulty,
@@ -63,7 +62,7 @@ const App = () => {
 
 
     const checkInput = () => {
-        debugger
+        
         if (isNaN(userNumber) === false && userNumber.length === difficulty) { //4-digit number check
             if (new Set(userNumber).size !== userNumber.length) { //repeated digits check
                 setInfo('Цифры не должны повторяться')
@@ -78,7 +77,7 @@ const App = () => {
 
 
     const countAnimals = () => {
-        debugger
+       
         let bullsCount = 0;
         let cowsCount = 0;
 
@@ -112,7 +111,7 @@ const App = () => {
 
 
     const resetGame = () => {
-        debugger
+        
         setSteps([]);
         setStepsCount(0);
         setInfo('');
@@ -126,7 +125,7 @@ const App = () => {
     }
 
     const addDifficultyRange = (props) => {
-        debugger
+       
         setDifficulty(parseInt(props));
 
     }
