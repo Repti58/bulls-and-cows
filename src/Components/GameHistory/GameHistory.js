@@ -10,7 +10,9 @@ const GameHistory = () => {
 
 async function bestResultsFetch() {
     debugger
-    const res = (await fetch('http://localhost:3002/api_best_results')).json()
+    let res = await fetch('http://localhost:3002/best_results')
+    res = await res.json()
+    console.log(`from bestResultsFetch ${res}`)
     return res
     // console.log(res);
     // .then((res) => console.log(res.json()))
@@ -52,8 +54,10 @@ async function fetchRequests() {
     debugger
     const fetchHistoryData = await historyDataFetch();
     console.log(fetchHistoryData);
+    setHistoryData(fetchHistoryData);
     const fetchbestResults = await bestResultsFetch();
     console.log(fetchbestResults);
+    setBestResults(fetchbestResults);
 }
     useEffect(() => {
         debugger
@@ -148,8 +152,8 @@ async function fetchRequests() {
 
     return (
         <div>
-            {/* <div>{bestResultsTable()}</div>
-            <div>{GameHistoryTable()}</div> */}
+            <div>{bestResultsTable()}</div>
+            <div>{GameHistoryTable()}</div>
         </div>
     )
 }
