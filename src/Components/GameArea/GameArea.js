@@ -5,7 +5,7 @@ import InfoBar from "./InfoBar/InfoBar";
 import { Link } from "react-router-dom";
 
 function GameArea(props) {
-    
+
 
     const inputCurrentState = () => {
         debugger
@@ -13,7 +13,7 @@ function GameArea(props) {
         props.input.current.readOnly = false
         props.resetGame()
     }
-    
+
     const addDifficultyRange = (value) => {
         debugger
         props.input.current.focus()
@@ -23,7 +23,7 @@ function GameArea(props) {
     }
 
 
-   
+
 
     return (
         <div>
@@ -67,7 +67,7 @@ function GameArea(props) {
             </div>
             <div className="logoBox">
                 <img src={logo} alt='bullLogo' className="logo" />
-            </div>           
+            </div>
         </div>
     );
 }

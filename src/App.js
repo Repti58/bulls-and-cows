@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 
 
 const App = () => {
-    
+
     const stepData = {
         stepCount: 0,
         userNumber: '',
@@ -27,7 +27,7 @@ const App = () => {
     const input = React.createRef()
 
     const getNumberDeclination = () => {
-        
+
         switch (difficulty) {
             case 3:
             case 4:
@@ -40,7 +40,7 @@ const App = () => {
     }
 
     const postData = (stepsCount) => {
-       
+
         const data = {
             date: new Date().toLocaleString(),
             difficulty: difficulty,
@@ -62,7 +62,7 @@ const App = () => {
 
 
     const checkInput = () => {
-        
+
         if (isNaN(userNumber) === false && userNumber.length === difficulty) { //4-digit number check
             if (new Set(userNumber).size !== userNumber.length) { //repeated digits check
                 setInfo('Цифры не должны повторяться')
@@ -77,7 +77,7 @@ const App = () => {
 
 
     const countAnimals = () => {
-       
+
         let bullsCount = 0;
         let cowsCount = 0;
 
@@ -111,13 +111,13 @@ const App = () => {
 
 
     const resetGame = () => {
-        
+
         setSteps([]);
         setStepsCount(0);
         setInfo('');
         setValue('');
         getRandomNumber();
-        
+
         // input.current.focus()
         // input.current.readOnly = false
         setDisableBtnShot(false);
@@ -125,7 +125,7 @@ const App = () => {
     }
 
     const addDifficultyRange = (props) => {
-       
+
         setDifficulty(parseInt(props));
 
     }
@@ -152,7 +152,7 @@ const App = () => {
     }, [])
 
     console.log(`randomNumber ${randomNumberSTR}`);
-    
+
     return (
         <div className="container">
             <div  >
@@ -166,7 +166,7 @@ const App = () => {
             <div>
                 <Routes>
                     <Route path="/rules" element={<Rules />} />
-                    <Route path={"/main" && "/*"}  element={
+                    <Route path={"/main" && "/*"} element={
                         <GameArea
                             steps={steps} info={info}
                             disableBtnShot={disableBtnShot}
@@ -178,10 +178,10 @@ const App = () => {
                             getNumberDeclination={getNumberDeclination}
                             input={input}
                             value={value}
-                            setValue={setValue}                            
+                            setValue={setValue}
                         />}
                     />
-                   
+
                     <Route path="/gamehistory" element={<GameHistory />} />
                 </Routes>
             </div>

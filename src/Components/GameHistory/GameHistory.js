@@ -14,13 +14,6 @@ const GameHistory = () => {
         res = await res.json()
         console.log(`from bestResultsFetch ${res}`)
         return res
-        // console.log(res);
-        // .then((res) => console.log(res.json()))
-
-
-        // .then((res) => console.log(res.json()))
-        // .then(res => setBestResults(res))    
-        // .catch(err => console.error(err));
     }
 
     async function historyDataFetch() {
@@ -28,26 +21,7 @@ const GameHistory = () => {
         let res = await fetch('http://localhost:3002/api')
         res = await res.json()
         return res.reverse()
-        //    console.log(res)
-        // .then((res) => console.log(res.json()))
-        // .then((res) => res.json())
-        // console.log(res.json())
-        // .then((res) => console.log(res.json()))
-        // .then(res => setHistoryData(res.reverse()))    
-        // .catch(err => console.error(err));
     }
-
-    // async function fetchData() {
-    // debugger
-
-    //     let response = await fetch('http://localhost:3002/api');
-    //     let fetchHystoryData = await response.json();
-    //     setHistoryData(fetchHystoryData)     
-
-    //     let response2 = await fetch('http://localhost:3002/api_best_results');
-    //     let fetchBestResults = await response2.json();
-    //     setBestResults(fetchBestResults)
-    // }
 
 
     async function fetchRequests() {
@@ -62,24 +36,6 @@ const GameHistory = () => {
     useEffect(() => {
         debugger
         fetchRequests()
-
-
-        // fetch('http://localhost:3002/api')
-        //     // .then((res) => console.log(res.json()))
-        //     .then((res) => res.json())
-        //     // console.log(res.json())
-        //     // .then((res) => console.log(res.json()))
-        //     .then(res => setHistoryData(res.reverse()))
-        //     .catch(err => console.error(err));
-
-        // fetch('http://localhost:3002/api_best_results')
-        // // .then((res) => console.log(res.json()))
-        // .then((res) => res.json())
-        // // console.log(res.json())
-        // // .then((res) => console.log(res.json()))
-        // .then(res => setBestResults(res))
-
-        // .catch(err => console.error(err));
     }, [])
 
 
@@ -92,14 +48,10 @@ const GameHistory = () => {
                         <th>3</th>
                         <th>4</th>
                         <th>5</th>
-
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        {/* <td>3</td>
-                    <td>4</td>
-                    <td>5</td> */}
                         <td>{!bestResults ? "Loading" : bestResults[0].steps}</td>
                         <td>{!bestResults ? "Loading" : bestResults[1].steps}</td>
                         <td>{!bestResults ? "Loading" : bestResults[2].steps}</td>
