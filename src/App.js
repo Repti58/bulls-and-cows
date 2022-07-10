@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 
 
 const App = () => {
-
+debugger
     const stepData = {
         stepCount: 0,
         userNumber: '',
