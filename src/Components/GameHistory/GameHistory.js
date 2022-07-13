@@ -3,20 +3,20 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const GameHistory = () => {
-debugger
+
     const [historyData, setHistoryData] = useState(null);
     const [bestResults, setBestResults] = useState(null);
 
 
     async function bestResultsFetch() {
-        debugger
+        
         let res = await fetch('http://localhost:3002/best_results')
         res = await res.json()        
         return res
     }
 
     async function historyDataFetch() {
-        debugger
+        
         let res = await fetch('http://localhost:3002/api')
         res = await res.json()
         return res.reverse()
@@ -24,7 +24,7 @@ debugger
 
 
     async function fetchRequests() {
-        debugger
+        
         const fetchHistoryData = await historyDataFetch();
         console.log(fetchHistoryData);
         setHistoryData(fetchHistoryData);
@@ -33,7 +33,7 @@ debugger
         setBestResults(fetchbestResults);
     }
     useEffect(() => {
-        debugger
+        
         fetchRequests()
     }, [])
 
