@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes, HashRouter } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import GameArea from "./Components/GameArea/GameArea";
 import Rules from "./Components/Rules/Rules";
 import GameHistory from "./Components/GameHistory/GameHistory";
@@ -164,7 +164,7 @@ const App = () => {
                 </p>
             </div>
             <div>
-                <HashRouter>
+                <Routes>
                     <Route path="/rules" element={<Rules />} />
                     <Route path={"/main" && "/*"} element={
                         <GameArea
@@ -183,7 +183,7 @@ const App = () => {
                     />
 
                     <Route path="/gamehistory" element={<GameHistory />} />
-                </HashRouter>
+                </Routes>
             </div>
         </div>
     )
