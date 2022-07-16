@@ -164,7 +164,7 @@ const App = () => {
                 </p>
             </div>
             <div>
-                <Routes>
+                <HashRouter>
                     <Route path="/rules" element={<Rules />} />
                     <Route path={"/main" && "/*"} element={
                         <GameArea
@@ -183,7 +183,7 @@ const App = () => {
                     />
 
                     <Route path="/gamehistory" element={<GameHistory />} />
-                </Routes>
+                </HashRouter>
             </div>
         </div>
     )
