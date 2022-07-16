@@ -44,9 +44,9 @@ const GameHistory = () => {
             <table id="games">
                 <thead>
                     <tr>
-                        <th>3</th>
-                        <th>4</th>
-                        <th>5</th>
+                        <th>3 цифры</th>
+                        <th>4 цифры</th>
+                        <th>5 цифры</th>
                     </tr>
                 </thead>
                 <tbody>
