@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, HashRouter } from "react-router-dom";
 import GameArea from "./Components/GameArea/GameArea";
 import Rules from "./Components/Rules/Rules";
 import GameHistory from "./Components/GameHistory/GameHistory";
