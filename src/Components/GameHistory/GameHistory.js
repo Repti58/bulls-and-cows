@@ -46,7 +46,7 @@ const GameHistory = () => {
                     <tr>
                         <th>3 цифры</th>
                         <th>4 цифры</th>
-                        <th>5 цифры</th>
+                        <th>5 цифр</th>
                     </tr>
                 </thead>
                 <tbody>
