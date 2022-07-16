@@ -52,7 +52,7 @@ const App = () => {
             headers: { 'Content-Type': 'application/json' }
         };
         console.log(options);
-        fetch('http://localhost:3002/api', options)
+        fetch('https://jade-glorious-fountain.glitch.me/api', options)
     }
 
 
