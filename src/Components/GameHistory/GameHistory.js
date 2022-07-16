@@ -10,14 +10,14 @@ const GameHistory = () => {
 
     async function bestResultsFetch() {
         
-        let res = await fetch('http://localhost:3002/best_results')
+        let res = await fetch('https://jade-glorious-fountain.glitch.me/best_results')
         res = await res.json()        
         return res
     }
 
     async function historyDataFetch() {
         
-        let res = await fetch('http://localhost:3002/api')
+        let res = await fetch('https://jade-glorious-fountain.glitch.me/api')
         res = await res.json()
         return res.reverse()
     }
