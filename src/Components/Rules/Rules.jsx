@@ -15,7 +15,7 @@ const Rules = () => {
                 <h4>Пример</h4>
                 {rulesExample}
                 <div className="backLink">
-                    <Link to='/main'><button className="button">Назад к игре</button></Link>
+                    <Link to='/main' className='link'><button className="button">Назад к игре</button></Link>
                 </div>
             </div>
 
