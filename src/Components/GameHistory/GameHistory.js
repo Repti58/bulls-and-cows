@@ -106,7 +106,7 @@ const GameHistory = () => {
             <p className="title3">Лучшие результаты</p>
             <div>{bestResultsTable()}</div>
             <p></p>
-            <p className="title3"> История Игр</p>
+            <p className="title3"> История игр</p>
             <div>{GameHistoryTable()}</div>
         </div>
     )
