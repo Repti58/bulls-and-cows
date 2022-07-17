@@ -132,7 +132,7 @@ const App = () => {
 
     useEffect(() => {
         resetGame()
-        fetch('https://jade-glorious-fountain.glitch.me/api')
+        fetch('https://jade-glorious-fountain.glitch.me/api') //to wake up Glitch
     }, [difficulty])
 
     function getRandomNumber() {
