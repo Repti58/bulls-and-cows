@@ -132,6 +132,7 @@ const App = () => {
 
     useEffect(() => {
         resetGame()
+        fetch('https://jade-glorious-fountain.glitch.me/api')
     }, [difficulty])
 
     function getRandomNumber() {
