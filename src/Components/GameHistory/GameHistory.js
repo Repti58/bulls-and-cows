@@ -51,9 +51,9 @@ const GameHistory = () => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td>{!bestResults ? "Loading" : bestResults[0].steps}</td>
-                        <td>{!bestResults ? "Loading" : bestResults[1].steps}</td>
-                        <td>{!bestResults ? "Loading" : bestResults[2].steps}</td>
+                        <td>{!bestResults ? (<div className="loader"></div>) : bestResults[0].steps}</td>
+                        <td>{!bestResults ? (<div className="loader"></div>) : bestResults[1].steps}</td>
+                        <td>{!bestResults ? (<div className="loader"></div>) : bestResults[2].steps}</td>
                     </tr>
                 </tbody>
             </table>
@@ -92,7 +92,7 @@ const GameHistory = () => {
         return (
             <div>
                 <div>
-                    {!historyData ? 'Loading' : table()}
+                    {!historyData ? (<div className="loader"></div>) : table()}
                 </div>
                 <div className="backLink">
                     <Link to='/main' className='link'><button className="button">Назад к игре</button></Link>
