@@ -42,7 +42,7 @@ const GameHistory = () => {
             <th>5 цифр</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody>        
           <tr>
             <td>
               {!bestResults ? (
@@ -110,7 +110,7 @@ const GameHistory = () => {
 
   return (
     <div>
-      <p className="title3">Лучшие результаты</p>
+      <p className="title3">Лучшие результаты (количество попыток)</p>
       <div>{bestResultsTable()}</div>
       <p></p>
       <p className="title3"> История игр</p>

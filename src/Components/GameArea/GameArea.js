@@ -27,7 +27,7 @@ function GameArea(props) {
           <button className="button">Правила игры</button>
         </Link>
         <Link to="/gamehistory" className="link">
-          <button className="button">История</button>
+          <button className="button">История игр</button>
         </Link>
         <div>
           <p className="title3">Сложность (количество цифр):</p>
