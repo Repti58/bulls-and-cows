@@ -42,7 +42,7 @@ const GameHistory = () => {
             <th>5 цифр</th>
           </tr>
         </thead>
-        <tbody>        
+        <tbody>
           <tr>
             <td>
               {!bestResults ? (
@@ -85,7 +85,9 @@ const GameHistory = () => {
             {historyData.map((el, index) => {
               return (
                 <tr key={index}>
-                  <td>{el.date}</td>
+                  <td>
+                    <div className="history-date">{el.date}</div>
+                  </td>
                   <td>{el.difficulty}</td>
                   <td>{el.steps}</td>
                 </tr>
