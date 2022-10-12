@@ -266,6 +266,11 @@ body {
   margin-top: 30px;
 }
 
+.history-date {
+  padding-left: 20px;
+  text-align: left;
+}
+
 .logo {
   /* border: solid 1px rgb(116, 31, 226); */
   width: 250px;
