@@ -2,7 +2,7 @@
   "name": "newproject",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://repti85.github.io/bulls_and_cows/",
+  "homepage": "https://repti85.github.io/bulls-and-cows/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
@@ -46,11 +46,11 @@
   "main": "test.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/repti85/bulls_and_cows.git"
+    "url": "git+https://github.com/repti85/bulls-and-cows.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/repti85/bulls_and_cows/issues"
+    "url": "https://github.com/repti85/bulls-and-cows/issues"
   }
 }
