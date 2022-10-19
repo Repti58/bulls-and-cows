@@ -33,7 +33,7 @@
 - History of attempts
 
 ## Features:
-- **Using backend deployed on Glitch.com**
+- **Using the backend with a database deployed on Glitch.com**
 - **Technologies used: HTML, CSS, JavaScript, React**
 
 ## Appearance:
