@@ -12,7 +12,7 @@
 <p align="center">https://repti85.github.io/bulls-and-cows</p>
 <br>
 <h3>
-  This web app using backend deployed on "Glitch"
+  This web app using backend deployed on Glitch.com
 </h3>
 
 **Github (backend):**  https://github.com/repti85/bulls-and-cows-backend.git
@@ -33,12 +33,12 @@
 - History of attempts
 
 ## Features:
-- **Adaptive layout**
-- **Technologies used: HTML, CSS, Bootstrap, JavaScript, React, Redux/Redux-toolkit**
+- **Using backend deployed on Glitch.com**
+- **Technologies used: HTML, CSS, JavaScript, React**
 
 ## Appearance:
 <a href="https://repti85.github.io/bulls-and-cows">
-  <img src="img/bulls-and-cows-scr.png" width="600"> 
+  <img src="img/bulls-and-cows-scr.png" width="800"> 
 </a>
 
 ## Planned improvements:
