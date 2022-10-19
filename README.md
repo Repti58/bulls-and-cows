@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+<h1 align="center">
+  <a href="https://repti85.github.io/bulls-and-cows">
+    Bulls and Cows<br>
+  </a>
+  Logic game
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+<img src="src/Components/GameArea/img/bull.png" width="200" >
+</p>
 
-## Available Scripts
+<p align="center">https://repti85.github.io/bulls-and-cows</p>
+<br>
+<h3>
+  This web app using backend deployed on "Glitch"
+</h3>
 
-In the project directory, you can run:
+**Github (backend):**  https://github.com/repti85/bulls-and-cows-backend.git
 
-### `npm start`
+## Game description:  
+  The player is invited to guess the numbers that the computer guessed.
+  The game has three difficulty levels (3, 4 or 5 numbers).
+  In the input field, player can enter only the number of digits that corresponds to the level of difficulty.
+  Numbers must not be repeated, other characters cannot be used, and input field must not be empty. Otherwise, the game will display an appropriate error message.
+  After entering the numbers and pressing the "make a move" button, the game displays the result - the amount of bulls and cows (a cow - the figure is guessed, but not in its place, a bull - the figure is guessed and is in its place. The game continues until the player guesses all the numbers in the correct order. When the player guessed all the numbers, the game will congratulate and report the amount of attempts. In the "history" section, you can view the history of all games, including the date, difficulty and result. It also displays the best scores by amount of attempts.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Contain:
+- Game rules section
+- Game history section
+- The function of choosing the complexity of the game
+- Input field and control buttons
+- History of attempts
 
-### `npm test`
+## Features:
+- **Adaptive layout**
+- **Technologies used: HTML, CSS, Bootstrap, JavaScript, React, Redux/Redux-toolkit**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Appearance:
+<a href="https://repti85.github.io/Currency-rates/">
+  <img src="img/screenshot_cut.png"> 
+</a>
