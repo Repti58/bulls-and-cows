@@ -5,6 +5,10 @@
   Logic game
 </h1>
 
+<p align="center">
+<img src="src/Components/GameArea/img/bull.png" width="200" >
+</p>
+
 <p align="center">https://repti85.github.io/bulls-and-cows</p>
 <br>
 <h3>
