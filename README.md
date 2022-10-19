@@ -38,7 +38,10 @@
 
 ## Appearance:
 <a href="https://repti85.github.io/bulls-and-cows">
-  <img src="img/bulls-and-cows-scr.png" width="800"> 
+  <img src="img/screenshot1.png" width="300"> 
+  </a>
+ <a href="https://repti85.github.io/bulls-and-cows/#/gamehistory">
+  <img src="img/screenshot2.png" width="300"> 
 </a>
 
 ## Planned improvements:
