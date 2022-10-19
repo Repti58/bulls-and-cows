@@ -13,8 +13,7 @@
 
 **Github (backend):**  https://github.com/repti85/bulls-and-cows-backend.git
 
-## Dscription:
-  ### The essence of the game: 
+## Game description:  
   The player is invited to guess the numbers that the computer guessed.
   The game has three difficulty levels (3, 4 or 5 numbers).
   In the input field, player can enter only the number of digits that corresponds to the level of difficulty.
@@ -23,9 +22,11 @@
 
 
 ## Contain:
-- **Data on exchange rates for any date**
-- **Rates change display (amount and pointer indicator)**
-- **Switcher tabular view/mosaic view**
+- Game rules section
+- Game history section
+- The function of choosing the complexity of the game
+- Input field and control buttons
+- History of attempts
 
 ## Features:
 - **Adaptive layout**
