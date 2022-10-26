@@ -12,7 +12,7 @@
 <p align="center">https://repti85.github.io/bulls-and-cows</p>
 <br>
 <h3>
-  This web app using backend deployed on "Glitch"
+  This web app using backend deployed on Glitch.com
 </h3>
 
 **Github (backend):**  https://github.com/repti85/bulls-and-cows-backend.git
@@ -25,7 +25,7 @@
   After entering the numbers and pressing the "make a move" button, the game displays the result - the amount of bulls and cows (a cow - the figure is guessed, but not in its place, a bull - the figure is guessed and is in its place. The game continues until the player guesses all the numbers in the correct order. When the player guessed all the numbers, the game will congratulate and report the amount of attempts. In the "history" section, you can view the history of all games, including the date, difficulty and result. It also displays the best scores by amount of attempts.
 
 
-## Contain:
+## Contains:
 - Game rules section
 - Game history section
 - The function of choosing the complexity of the game
@@ -33,10 +33,17 @@
 - History of attempts
 
 ## Features:
-- **Adaptive layout**
-- **Technologies used: HTML, CSS, Bootstrap, JavaScript, React, Redux/Redux-toolkit**
+- **Using the backend with a database deployed on Glitch.com**
+- **Technologies used: HTML, CSS, JavaScript, React**
 
 ## Appearance:
-<a href="https://repti85.github.io/Currency-rates/">
-  <img src="img/screenshot_cut.png"> 
+<a href="https://repti85.github.io/bulls-and-cows">
+  <img src="img/screenshot1.png" width="300"> 
+  </a>
+ <a href="https://repti85.github.io/bulls-and-cows/#/gamehistory">
+  <img src="img/screenshot2.png" width="300"> 
 </a>
+
+## Planned improvements:
+- Adaptive design
+- English version
