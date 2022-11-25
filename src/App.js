@@ -141,7 +141,7 @@ const App = () => {
     getRandomNumber();
   }, []);
 
-  // console.log(`randomNumber ${randomNumberSTR}`);
+  // console.log(`randomNumber ${randomNumberSTR}`); 
 
   return (
     <div className="container">
