@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://repti85.github.io/bulls-and-cows">
+  <a href="https://repti58.github.io/bulls-and-cows">
     Bulls and Cows<br>
   </a>
   Logic game
@@ -9,13 +9,13 @@
 <img src="src/Components/GameArea/img/bull.png" width="200" >
 </p>
 
-<p align="center">https://repti85.github.io/bulls-and-cows</p>
+<p align="center">https://repti58.github.io/bulls-and-cows</p>
 <br>
 <h3>
   This web app using backend deployed on Glitch.com
 </h3>
 
-**Github (backend):**  https://github.com/repti85/bulls-and-cows-backend.git
+**Github (backend):**  https://github.com/repti58/bulls-and-cows-backend.git
 
 ## Game description:  
   The player is invited to guess the numbers that the computer guessed.
@@ -37,10 +37,10 @@
 - **Technologies used: HTML, CSS, JavaScript, React**
 
 ## Appearance:
-<a href="https://repti85.github.io/bulls-and-cows">
+<a href="https://repti58.github.io/bulls-and-cows">
   <img src="img/screenshot1.png" width="300"> 
   </a>
- <a href="https://repti85.github.io/bulls-and-cows/#/gamehistory">
+ <a href="https://repti58.github.io/bulls-and-cows/#/gamehistory">
   <img src="img/screenshot2.png" width="300"> 
 </a>
 
