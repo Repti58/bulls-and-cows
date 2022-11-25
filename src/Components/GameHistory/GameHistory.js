@@ -22,10 +22,10 @@ const GameHistory = () => {
 
   async function fetchRequests() {
     const fetchHistoryData = await historyDataFetch();
-    console.log(fetchHistoryData);
+    // console.log(fetchHistoryData);
     setHistoryData(fetchHistoryData);
     const fetchbestResults = await bestResultsFetch();
-    console.log(fetchbestResults);
+    // console.log(fetchbestResults);
     setBestResults(fetchbestResults);
   }
   useEffect(() => {

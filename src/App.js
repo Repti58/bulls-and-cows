@@ -47,7 +47,7 @@ const App = () => {
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" },
     };
-    console.log(options);
+    // console.log(options);
     fetch("https://jade-glorious-fountain.glitch.me/api", options);
   };
 
@@ -141,7 +141,7 @@ const App = () => {
     getRandomNumber();
   }, []);
 
-  console.log(`randomNumber ${randomNumberSTR}`);
+  // console.log(`randomNumber ${randomNumberSTR}`);
 
   return (
     <div className="container">
