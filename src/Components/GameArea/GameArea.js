@@ -6,14 +6,14 @@ import { Link } from "react-router-dom";
 
 function GameArea(props) {
   const inputCurrentState = () => {
-    debugger;
+    
     props.input.current.focus();
     props.input.current.readOnly = false;
     props.resetGame();
   };
 
   const addDifficultyRange = (value) => {
-    debugger;
+    
     props.input.current.focus();
     props.input.current.readOnly = false;
     const difficultyValue = value;

@@ -8,14 +8,16 @@ const GameHistory = () => {
 
   async function bestResultsFetch() {
     let res = await fetch(
-      "https://jade-glorious-fountain.glitch.me/best_results"
+      "https://wax-happy-sprint.glitch.me/best_results"
+      // "http://localhost:3005/best_results"
     );
     res = await res.json();
     return res;
   }
 
   async function historyDataFetch() {
-    let res = await fetch("https://jade-glorious-fountain.glitch.me/api");
+    let res = await fetch("https://wax-happy-sprint.glitch.me/api");
+    // let res = await fetch("http://localhost:3005/api");
     res = await res.json();
     return res.reverse();
   }

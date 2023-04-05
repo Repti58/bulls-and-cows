@@ -48,7 +48,8 @@ const App = () => {
       headers: { "Content-Type": "application/json" },
     };
     // console.log(options);
-    fetch("https://jade-glorious-fountain.glitch.me/api", options);
+    fetch("https://wax-happy-sprint.glitch.me/api", options);
+    // fetch("http://localhost:3005/api", options);
   };
 
   let userNumber = value;
@@ -103,6 +104,7 @@ const App = () => {
   };
 
   const resetGame = () => {
+    
     setSteps([]);
     setStepsCount(0);
     setInfo("");
@@ -116,30 +118,37 @@ const App = () => {
   };
 
   const addDifficultyRange = (props) => {
-    setDifficulty(parseInt(props));
+    
+    setDifficulty(parseInt(props));    
   };
 
   useEffect(() => {
+    
     resetGame();
-    fetch("https://jade-glorious-fountain.glitch.me/api"); //to wake up Glitch
-  }, [difficulty]);
+    fetch("https://wax-happy-sprint.glitch.me/api"); //to wake up Glitch
+    // getRandomNumber();
+  }, []);
 
   function getRandomNumber() {
+    
     const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     const newArr = [];
-    let temp = 9;
-    for (let i = 1; i <= parseInt(difficulty); i++) {
-      let random = Math.floor(Math.random() * temp);
+    // let temp = 9;
+    for (let i = 0; i < parseInt(difficulty); i++) {
+      
+      let random = Math.floor(Math.random() * arr.length);
       newArr.push(arr[random]);
       arr.splice(random, 1);
-      temp -= 1;
+      // temp -= 1;
     }
+    console.log(newArr.join(""));
     setRandomNumberSTR(newArr.join(""));
   }
 
   useEffect(() => {
+    
     getRandomNumber();
-  }, []);
+  }, [difficulty]);
 
   // console.log(`randomNumber ${randomNumberSTR}`); 
 
