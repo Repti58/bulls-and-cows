@@ -155,7 +155,7 @@ const App = () => {
   return (
     <div className="container">
       <div>
-        <p className="title">БЫКИ И КОРОВЫ</p>
+        <p className="title">BULLS & COWS</p>
         <p className="title2">логическая игра</p>
       </div>
       <div>
