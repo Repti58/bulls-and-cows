@@ -26,15 +26,13 @@ const GameHistory = () => {
     return res.reverse();
   }
 
-  function fetchRequests() {
-    setTimeout(async() => {
+  async function fetchRequests() {
     const fetchHistoryData = await historyDataFetch();
     // console.log(fetchHistoryData);
     setHistoryData(fetchHistoryData);
     const fetchbestResults = await bestResultsFetch();
     // console.log(fetchbestResults);
     setBestResults(fetchbestResults);
-  }, 2000)
   }
 
   useEffect(() => {
