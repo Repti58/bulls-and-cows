@@ -40,7 +40,7 @@ const App = () => {
     const data = {
       date: new Date().toLocaleString(),
       difficulty: difficulty,
-      number: stepsCount,
+      steps: stepsCount,
     };
     const options = {
       method: "POST",
@@ -140,7 +140,7 @@ const App = () => {
       arr.splice(random, 1);
       // temp -= 1;
     }
-    // console.log(newArr.join(""));
+    // console.log("Загаданные цифры", newArr.join(""));
     setRandomNumberSTR(newArr.join(""));
   }
 
