@@ -125,7 +125,7 @@ const App = () => {
   useEffect(() => {
     
     resetGame();
-    fetch("https://wax-happy-sprint.glitch.me/api"); //to wake up Glitch
+    // fetch("https://wax-happy-sprint.glitch.me/api"); //to wake up Glitch
     // getRandomNumber();
   }, []);
 

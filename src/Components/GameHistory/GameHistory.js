@@ -8,7 +8,8 @@ const GameHistory = () => {
 
   async function bestResultsFetch() {
     let res = await fetch(
-      "https://wax-happy-sprint.glitch.me/best_results"
+      "https://bulls-and-cows-backend.vercel.app/best_results"
+      // "https://wax-happy-sprint.glitch.me/best_results"
       // "http://localhost:3005/best_results"
     );
     res = await res.json();
@@ -16,8 +17,11 @@ const GameHistory = () => {
   }
 
   async function historyDataFetch() {
-    let res = await fetch("https://wax-happy-sprint.glitch.me/api");
-    // let res = await fetch("http://localhost:3005/api");
+    let res = await fetch(
+      "https://bulls-and-cows-backend.vercel.app/api"
+      // "https://wax-happy-sprint.glitch.me/api"
+    // "http://localhost:3005/api"
+    );
     res = await res.json();
     return res.reverse();
   }
