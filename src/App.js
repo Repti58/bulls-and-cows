@@ -49,7 +49,7 @@ const App = () => {
     };
     // console.log(options);
     fetch(
-      "https://bulls-and-cows-backend.vercel.app/best_results",
+      "https://bulls-and-cows-backend.vercel.app/api",
       // "https://wax-happy-sprint.glitch.me/api",
       // "http://localhost:3005/api",
       options
