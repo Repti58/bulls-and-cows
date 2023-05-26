@@ -34,7 +34,7 @@ const GameHistory = () => {
     const fetchbestResults = await bestResultsFetch();
     // console.log(fetchbestResults);
     setBestResults(fetchbestResults);
-  }, 1000)
+  }, 2000)
   }
 
   useEffect(() => {
