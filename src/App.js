@@ -140,7 +140,7 @@ const App = () => {
       arr.splice(random, 1);
       // temp -= 1;
     }
-    // console.log("Загаданные цифры", newArr.join(""));
+    console.log("Загаданные цифры", newArr.join(""));
     setRandomNumberSTR(newArr.join(""));
   }
 
