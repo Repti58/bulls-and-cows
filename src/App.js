@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Route, Routes } from "react-router-dom";
 import GameArea from "./Components/GameArea/GameArea";
 import Rules from "./Components/Rules/Rules";
@@ -22,7 +22,10 @@ const App = () => {
   const [disableBtnReset, setDisableBtnReset] = useState(true);
   const [disableBtnShot, setDisableBtnShot] = useState(false);
   const [difficulty, setDifficulty] = useState(4);
-  const input = React.createRef();
+  const [inputReadOnly, setInputReadOnly] = useState(false)
+  const [inputClass, setInputClass] = useState("input")
+  // const input = React.createRef();
+  const input = useRef()
 
   const getNumberDeclination = () => {
     switch (difficulty) {
@@ -91,7 +94,9 @@ const App = () => {
     if (bullsCount === difficulty) {
       setInfo(`Вы отгадали c ${stepsCount + 1}-й попытки :)`);
       postData(stepsCount + 1);
-      input.current.readOnly = true;
+      // input.current.readOnly = true;
+      setInputReadOnly(true)
+      setInputClass("input input_readonly")
       setDisableBtnReset(false);
       setDisableBtnShot(true);
     }
@@ -112,10 +117,9 @@ const App = () => {
     setStepsCount(0);
     setInfo("");
     setValue("");
-    getRandomNumber();
-
-    // input.current.focus()
-    // input.current.readOnly = false
+    getRandomNumber();    
+    setInputReadOnly(false)
+    setInputClass("input")
     setDisableBtnShot(false);
     setDisableBtnReset(true);
   };
@@ -125,8 +129,13 @@ const App = () => {
   };
 
   useEffect(() => {
-    resetGame();
-    // fetch("https://wax-happy-sprint.glitch.me/api"); //to wake up Glitch
+    // resetGame();
+    fetch( //to wake up Server
+      "https://wax-happy-sprint.glitch.me/api"
+      // "https://bulls-and-cows-backend.vercel.app/"
+      // "http://localhost:3005/"
+    );
+    
     // getRandomNumber();
   }, []);
 
@@ -145,7 +154,8 @@ const App = () => {
   }
 
   useEffect(() => {
-    getRandomNumber();
+    // getRandomNumber();
+    resetGame()
   }, [difficulty]);
 
   // console.log(`randomNumber ${randomNumberSTR}`);
@@ -175,6 +185,8 @@ const App = () => {
                 input={input}
                 value={value}
                 setValue={setValue}
+                inputReadOnly={inputReadOnly}
+                inputClass={inputClass}
               />
             }
           />

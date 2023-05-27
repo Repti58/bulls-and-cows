@@ -5,6 +5,12 @@ import InfoBar from "./InfoBar/InfoBar";
 import { Link } from "react-router-dom";
 
 function GameArea(props) {
+  const inputHandler = (event) => {
+    if (event.key === "Enter") {
+      props.checkInput()
+    }
+  }
+
   const inputCurrentState = () => {
     
     props.input.current.focus();
@@ -75,12 +81,15 @@ function GameArea(props) {
 
       <div className="form">
         <input
-          className="input"
+          // className="input"
+          className={props.inputClass}
           ref={props.input}
           autoFocus
           maxLength={props.difficulty}
           value={props.value}
+          readOnly={props.inputReadOnly}
           onChange={(event) => props.setValue(event.target.value)}
+          onKeyDown={inputHandler}
         />
         <div>
           <InfoBar info={props.info} />
