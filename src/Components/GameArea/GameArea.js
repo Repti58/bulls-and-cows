@@ -81,7 +81,6 @@ function GameArea(props) {
 
       <div className="form">
         <input
-          // className="input"
           className={props.inputClass}
           ref={props.input}
           autoFocus

@@ -1,37 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 
-const GameHistory = () => {
+const GameHistory = (props) => {
   const [historyData, setHistoryData] = useState(null);
   const [bestResults, setBestResults] = useState(null);
 
   async function bestResultsFetch() {
-    let res = await fetch(
-      "https://bulls-and-cows-backend.vercel.app/best_results"
-      // "https://wax-happy-sprint.glitch.me/best_results"
-      // "http://localhost:3005/best_results"
-    );
+    let res = await fetch(props.URI);
     res = await res.json();
     return res;
   }
 
   async function historyDataFetch() {
-    let res = await fetch(
-      "https://bulls-and-cows-backend.vercel.app/api"
-      // "https://wax-happy-sprint.glitch.me/api"
-    // "http://localhost:3005/api"
-    );
+    let res = await fetch(props.URI);
     res = await res.json();
     return res.reverse();
   }
 
   async function fetchRequests() {
     const fetchHistoryData = await historyDataFetch();
-    // console.log(fetchHistoryData);
     setHistoryData(fetchHistoryData);
     const fetchbestResults = await bestResultsFetch();
-    // console.log(fetchbestResults);
     setBestResults(fetchbestResults);
   }
 
@@ -52,21 +41,21 @@ const GameHistory = () => {
         <tbody>
           <tr>
             <td>
-              {!bestResults ? (
+              {!bestResults || !bestResults[0]? (
                 <div className="loader"></div>
               ) : (
                 bestResults[0].steps
               )}
             </td>
             <td>
-              {!bestResults ? (
+              {!bestResults || !bestResults[1] ? (
                 <div className="loader"></div>
               ) : (
                 bestResults[1].steps
               )}
             </td>
             <td>
-              {!bestResults ? (
+              {!bestResults || !bestResults[2] ? (
                 <div className="loader"></div>
               ) : (
                 bestResults[2].steps
