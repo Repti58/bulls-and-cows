@@ -1,7 +1,7 @@
 const config = {
-	// backendUrl: 'http://localhost:3005/api',
-	backendUrl: "https://bulls-and-cows-backend.vercel.app/api"
-	// backendUrl: "https://wax-happy-sprint.glitch.me/api"
+	backendUrl: 'http://localhost:3005',
+	// backendUrl: "https://bulls-and-cows-backend.vercel.app"
+	// backendUrl: "https://wax-happy-sprint.glitch.me"
 }
 
 export default config
